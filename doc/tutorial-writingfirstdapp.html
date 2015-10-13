@@ -1,170 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Writing your first Dapp &mdash; ContractVM 0.1 documentation</title>
-  
-
-  
-  
-
-  
-
-  
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-    <link rel="top" title="ContractVM 0.1 documentation" href="index.html"/>
-        <link rel="up" title="Tutorials" href="tutorials.html"/>
-        <link rel="prev" title="Dappman: the dapp manager" href="tutorial-dappman.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
+    <title>Writing your first Dapp &mdash; ContractVM 0.1 documentation</title>
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
-            <a href="index.html" class="icon icon-home"> ContractVM
-          
-
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                0.1
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-                <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="tutorial-dappman.html">Dappman: the dapp manager</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Writing your first Dapp</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#dapp">Dapp</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#protocol-and-messages">Protocol and messages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#core">Core</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#api">API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mixing-all-classes">Mixing all classes</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#client-library">Client library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#example-usage">Example usage</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-            
-          
-        </div>
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ContractVM 0.1 documentation" href="index.html" />
+    <link rel="up" title="Tutorials" href="tutorials.html" />
+    <link rel="prev" title="Dappman: the dapp manager" href="tutorial-dappman.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>ContractVM 0.1 documentation</span></a></h1>
+        <h2 class="heading"><span>Writing your first Dapp</span></h2>
       </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
+      <div class="topnav" role="navigation" aria-label="top navigation">
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">ContractVM</a>
-      </nav>
+        <p>
+        «&#160;&#160;<a href="tutorial-dappman.html">Dappman: the dapp manager</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
 
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-          <li><a href="tutorials.html">Tutorials</a> &raquo;</li>
-      
-    <li>Writing your first Dapp</li>
-      <li class="wy-breadcrumbs-aside">
+      </div>
+      <div class="content">
         
-          
-            <a href="_sources/tutorial-writingfirstdapp.txt" rel="nofollow"> View page source</a>
-          
         
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
   <div class="section" id="writing-your-first-dapp">
 <h1>Writing your first Dapp<a class="headerlink" href="#writing-your-first-dapp" title="Permalink to this headline">¶</a></h1>
-<p>This section is a brief tutorial for dapp developers. We illustrate how to write a
-dapp by commenting the source code of a decentralized
+<p>This section is a brief tutorial for dapp developers. We illustrate how to
+write a dapp by commenting the source code of a decentralized
 key-value storage service. The full source code of this dapp is available at
 <a class="reference external" href="https://github.com/contractvm/cvm-dapp-blockstore">https://github.com/contractvm/cvm-dapp-blockstore</a>.
-The key-value storage dapp offers two APIs: set(key,value) and get(key).
-A set request saves a new immutable key-value pair, while get retrieves a pre-
-viously set value. Since set changes the state of the dapp, this API requires the
-client to publish a suitable message in the blockchain. Nodes scan the blockchain
-for new messages, and when they find a set request, they save the new key-value
-pair in their local database. Instead, executing a get does not require to publish
-any message, because nodes can handle this request internally.
-The dapp is split in two main parts: the first is the dapp which runs in nodes,
+The key-value storage dapp offers two APIs: <strong>set(key, value)</strong> and <strong>get(key)</strong>.
+A <em>set</em> request saves a new immutable key-value pair, while <em>get</em> retrieves a
+previously set value. Since set changes the state of the dapp, this API
+requires the client to publish a suitable message in the blockchain.
+Nodes scan the blockchain for new messages, and when they find a <em>set</em>
+request, they save the new key-value pair in their local database.
+Instead, executing a <em>get</em> does not require to publish
+any message, because nodes can handle this request internally.</p>
+<p>The dapp is split in two main parts: the first is the dapp which runs in nodes,
 while the second implements the library that client applications use
-to interact with the dapp. Note that, while we have chosen Python for develop-
-ing this dapp, our framework supports arbitrary programming languages. The
-mechanism used to this purpose is standard: the programmer codes the core features
-of dapp in her preferred language, and the framework uses them through
-the foreign function interface.</p>
+to interact with the dapp. Note that, while we have chosen Python for developing
+this dapp, our framework supports arbitrary programming languages. The
+mechanism used to this purpose is standard: the programmer codes the core
+features  of dapp in her preferred language, and the framework uses them
+through the foreign function interface.</p>
 <p>We start by creating an empty dapp with the empty template:</p>
 <div class="highlight-bash"><div class="highlight"><pre>dappman -w
 </pre></div>
@@ -212,7 +112,7 @@ Dapp myfirstdapp sucessfully created
 </div>
 <div class="section" id="dapp">
 <h2>Dapp<a class="headerlink" href="#dapp" title="Permalink to this headline">¶</a></h2>
-<p>We start from editing the dapp part that runs in nodes, located at myfirstdapp/dapp/myfirstdapp.py.</p>
+<p>We start from editing the dapp part that runs in nodes, located at <em>myfirstdapp/dapp/myfirstdapp.py</em>.</p>
 <div class="section" id="protocol-and-messages">
 <h3>Protocol and messages<a class="headerlink" href="#protocol-and-messages" title="Permalink to this headline">¶</a></h3>
 <p>First, we define the protocol and the supported messages of the dapp through set
@@ -223,8 +123,8 @@ of constants containing the code for each type of message and the dapp code.</p>
         <span class="n">METHOD_LIST</span> <span class="o">=</span> <span class="p">[</span><span class="n">METHOD_SET</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Then we extend the Message class, by defining a constructor
-for the set message, and by overriding the function toJSON() for
+<p>Then we extend the <strong>Message</strong> class, by defining a constructor
+for the set message, and by overriding the function <em>toJSON()</em> for
 the serialization of message data.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BlockStoreMessage</span> <span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">set</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
@@ -251,7 +151,7 @@ the serialization of message data.</p>
 <div class="section" id="core">
 <h3>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h3>
 <p>The next step is to write the core of our dapp: this is done in the next code-block by
-extending the class dapp.Core. In this class we define all the methods that
+extending the class <strong>dapp.Core</strong>. In this class we define all the methods that
 interact with the dapp state, including query and pair insertion. We define a
 function to obtain a value given its key, and another one to set a new key-value
 pair. We save key-value pairs in the internal database which is automatically
@@ -277,12 +177,12 @@ created by the framework to store the state of a dapp.</p>
 <div class="section" id="api">
 <h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
 <p>The services offered by the dapp are exposed to client applications as APIs.
-These APIs are implemented in the next code-block, where we extend the class dapp.API,
+These APIs are implemented in the next code-block, where we extend the class <strong>dapp.API</strong>,
 and we create a dict object which contains new API calls. Then, we
 write our two APIs:</p>
 <ul class="simple">
-<li>set (key,value) : creates a set message with a new key-value pair, and returns message broadcasting information;</li>
-<li>get (key) : gets a value for a given key, by invoking the Core.get method.</li>
+<li><em>set (key,value)</em>: creates a set message with a new key-value pair, and returns message broadcasting information;</li>
+<li><em>get (key)</em>: gets a value for a given key, by invoking the Core.get method.</li>
 </ul>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BlockStoreAPI</span> <span class="p">(</span><span class="n">dapp</span><span class="o">.</span><span class="n">API</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">dht</span><span class="p">,</span> <span class="n">api</span><span class="p">):</span>
@@ -333,7 +233,7 @@ write our two APIs:</p>
 </div>
 <div class="section" id="mixing-all-classes">
 <h3>Mixing all classes<a class="headerlink" href="#mixing-all-classes" title="Permalink to this headline">¶</a></h3>
-<p>Finally, we bind all the classes created so far. We use the method handleMessage to tell the framework daemon
+<p>Finally, we bind all the classes created so far by extending the <strong>dapp.Dapp</strong> class. We use the method <em>handleMessage</em> to tell the framework daemon
 how to handle each message.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">blockstore</span> <span class="p">(</span><span class="n">dapp</span><span class="o">.</span><span class="n">Dapp</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chain</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">dht</span><span class="p">,</span> <span class="n">apiMaster</span><span class="p">):</span>
@@ -352,11 +252,11 @@ how to handle each message.</p>
 </div>
 <div class="section" id="client-library">
 <h2>Client library<a class="headerlink" href="#client-library" title="Permalink to this headline">¶</a></h2>
-<p>Now we edit the dapp part used directly by clients, located at myfirstdapp/library/. The empty template
-has a file called myfirstdapp/library/EmptyManager.py, but we can rename it with a better name, like &#8220;MyFirstManager.py&#8221;.</p>
+<p>Now we edit the dapp part used directly by clients, located at <em>myfirstdapp/library/</em>. The empty template
+has a file called <em>myfirstdapp/library/EmptyManager.py</em>, but we can rename it with a better name, like <em>MyFirstManager.py</em>.</p>
 <p>In our library, we define a module that binds the API calls described after, which will be used to write client applications. We
-do this by extending the DappManager. This class includes the services of our
-dapp, by binding the API calls myfirstdapp.get and myfirstdapp.set. The method set only creates
+do this by extending the <strong>licontractvm.DappManager</strong>. This class includes the services of our
+dapp, by binding the API calls <em>myfirstdapp.get</em> and <em>myfirstdapp.set</em>. The method set only creates
 and broadcasts a new message containing the given key-value pair; the method
 get performs a consensus query to nodes, and returns the resulting value.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyFirstManager</span> <span class="p">(</span><span class="n">DappManager</span><span class="o">.</span><span class="n">DappManager</span><span class="p">):</span>
@@ -375,11 +275,11 @@ get performs a consensus query to nodes, and returns the resulting value.</p>
 </div>
 <div class="section" id="example-usage">
 <h2>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<p>We now exploit the created dapp for writing a client application. We first create a ConsensusManager,
+<p>We now exploit the created dapp for writing a client application. We first create a <strong>ConsensusManager</strong>,
 and we initialize it with a static set of nodes (at the moment we can use the our local contractvmd instance).</p>
-<p>Then we create a Wallet object, by using a local instance of
-bitcoin-core with private keys saved in the file app.wallet.</p>
-<p>Next we create a MyFirstManager, by using the ConsensusManager and Wallet objects
+<p>Then we create a <strong>Wallet</strong> object, by using a local instance of
+<em>bitcoin-core</em> with private keys saved in the file <em>app.wallet</em>.</p>
+<p>Next we create a <strong>MyFirstManager</strong>, by using the <em>ConsensusManager</em> and <em>Wallet</em> objects
 created before. The script asks the user for a key-value pair, and
 it publishes it to the framework. Then, the script asks the
 user for a key, and then queries and returns the associated value (if any).</p>
@@ -424,69 +324,20 @@ user for a key, and then queries and returns the associated value (if any).</p>
 </div>
 
 
-           </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
-      
-        <a href="tutorial-dappman.html" class="btn btn-neutral" title="Dappman: the dapp manager" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
+        <p>
+        «&#160;&#160;<a href="tutorial-dappman.html">Dappman: the dapp manager</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
 
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2015, Davide Gessa.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
-        </div>
       </div>
 
-    </section>
-
-  </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.1',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
-   
-
-</body>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Davide Gessa.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
 </html>
