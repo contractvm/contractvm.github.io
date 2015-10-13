@@ -32,8 +32,7 @@
   
     <link rel="top" title="ContractVM 0.1 documentation" href="index.html"/>
         <link rel="up" title="Tutorials" href="tutorials.html"/>
-        <link rel="next" title="Dappman: the dapp manager" href="tutorial-dappman.html"/>
-        <link rel="prev" title="Tutorials" href="tutorials.html"/> 
+        <link rel="prev" title="Dappman: the dapp manager" href="tutorial-dappman.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -83,11 +82,21 @@
             
             
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="tutorials.html">Tutorials</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Writing your first Dapp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial-dappman.html">Dappman: the dapp manager</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Writing your first Dapp</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dapp">Dapp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#protocol-and-messages">Protocol and messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#core">Core</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mixing-all-classes">Mixing all classes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#client-library">Client library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-usage">Example usage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -138,6 +147,280 @@
             
   <div class="section" id="writing-your-first-dapp">
 <h1>Writing your first Dapp<a class="headerlink" href="#writing-your-first-dapp" title="Permalink to this headline">¶</a></h1>
+<p>This section is a brief tutorial for dapp developers. We illustrate how to write a
+dapp by commenting the source code of a decentralized
+key-value storage service. The full source code of this dapp is available at
+<a class="reference external" href="https://github.com/contractvm/cvm-dapp-blockstore">https://github.com/contractvm/cvm-dapp-blockstore</a>.
+The key-value storage dapp offers two APIs: set(key,value) and get(key).
+A set request saves a new immutable key-value pair, while get retrieves a pre-
+viously set value. Since set changes the state of the dapp, this API requires the
+client to publish a suitable message in the blockchain. Nodes scan the blockchain
+for new messages, and when they find a set request, they save the new key-value
+pair in their local database. Instead, executing a get does not require to publish
+any message, because nodes can handle this request internally.
+The dapp is split in two main parts: the first is the dapp which runs in nodes,
+while the second implements the library that client applications use
+to interact with the dapp. Note that, while we have chosen Python for develop-
+ing this dapp, our framework supports arbitrary programming languages. The
+mechanism used to this purpose is standard: the programmer codes the core features
+of dapp in her preferred language, and the framework uses them through
+the foreign function interface.</p>
+<p>We start by creating an empty dapp with the empty template:</p>
+<div class="highlight-bash"><div class="highlight"><pre>dappman -w
+</pre></div>
+</div>
+<div class="highlight-plain"><div class="highlight"><pre>Dapp name: myfirstdapp
+Description: This is my first dapp
+Authors (comma separated): Davide Gessa
+Select a template:
+         0 . empty (https://github.com/contractvm/cvm-dapp-empty)
+         1 . blockstore (https://github.com/contractvm/cvm-dapp-blockstore)
+         2 . helloworld (https://github.com/contractvm/cvm-dapp-helloworld)
+         3 . fifomom (https://github.com/contractvm/cvm-dapp-fifomom)
+         4 . cotst (https://github.com/contractvm/cvm-dapp-cotst)
+Template: 0
+Creating directory for dapp: myfirstdapp
+Downloading template: empty
+Extracting template
+Setting up directories
+String replace for dapp name
+Creating manifest.json
+Dapp myfirstdapp sucessfully created
+</pre></div>
+</div>
+<p>This command will create a new dapp tree:</p>
+<div class="highlight-bash"><div class="highlight"><pre>myfirstdapp/
+        requirements.txt
+        setup.py
+        README.md
+        manifest.json
+        dapp/
+                myfirstdapp.py
+                __init__.py
+        library/
+                myfirstdapp/
+                        __init__.py
+                        EmptyManager.py
+        samples/
+                config.py
+                data
+</pre></div>
+</div>
+<p>Now every time we want to install the updated dapp, we type:</p>
+<div class="highlight-bash"><div class="highlight"><pre>dappman -i /path/of/your/dapp/myfirstdapp
+</pre></div>
+</div>
+<div class="section" id="dapp">
+<h2>Dapp<a class="headerlink" href="#dapp" title="Permalink to this headline">¶</a></h2>
+<p>We start from editing the dapp part that runs in nodes, located at myfirstdapp/dapp/myfirstdapp.py.</p>
+<div class="section" id="protocol-and-messages">
+<h3>Protocol and messages<a class="headerlink" href="#protocol-and-messages" title="Permalink to this headline">¶</a></h3>
+<p>First, we define the protocol and the supported messages of the dapp through set
+of constants containing the code for each type of message and the dapp code.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BlockStoreProto</span><span class="p">:</span>
+        <span class="n">DAPP_CODE</span> <span class="o">=</span> <span class="mh">0x08</span>
+        <span class="n">METHOD_SET</span> <span class="o">=</span> <span class="mh">0x01</span>
+        <span class="n">METHOD_LIST</span> <span class="o">=</span> <span class="p">[</span><span class="n">METHOD_SET</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Then we extend the Message class, by defining a constructor
+for the set message, and by overriding the function toJSON() for
+the serialization of message data.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BlockStoreMessage</span> <span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">set</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="n">BlockStoreMessage</span> <span class="p">()</span>
+                <span class="n">m</span><span class="o">.</span><span class="n">Key</span> <span class="o">=</span> <span class="n">key</span>
+                <span class="n">m</span><span class="o">.</span><span class="n">Value</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="n">m</span><span class="o">.</span><span class="n">DappCode</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">BlockStoreProto</span><span class="o">.</span><span class="n">DAPP_CODE</span>
+                <span class="n">m</span><span class="o">.</span><span class="n">Method</span> <span class="o">=</span> <span class="n">proto</span><span class="o">.</span><span class="n">BlockStoreProto</span><span class="o">.</span><span class="n">METHOD_SET</span>
+                <span class="k">return</span> <span class="n">m</span>
+
+        <span class="k">def</span> <span class="nf">toJSON</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="nb">super</span> <span class="p">(</span><span class="n">BlockStoreMessage</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">toJSON</span> <span class="p">()</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">Method</span> <span class="o">==</span> <span class="n">proto</span><span class="o">.</span><span class="n">BlockStoreProto</span><span class="o">.</span><span class="n">METHOD_SET</span><span class="p">:</span>
+                        <span class="n">data</span><span class="p">[</span><span class="s">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Key</span>
+                        <span class="n">data</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Value</span>
+                <span class="k">else</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="bp">None</span>
+
+                <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="core">
+<h3>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h3>
+<p>The next step is to write the core of our dapp: this is done in the next code-block by
+extending the class dapp.Core. In this class we define all the methods that
+interact with the dapp state, including query and pair insertion. We define a
+function to obtain a value given its key, and another one to set a new key-value
+pair. We save key-value pairs in the internal database which is automatically
+created by the framework to store the state of a dapp.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BlockStoreCore</span> <span class="p">(</span><span class="n">dapp</span><span class="o">.</span><span class="n">Core</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chain</span><span class="p">,</span> <span class="n">database</span><span class="p">):</span>
+                <span class="nb">super</span> <span class="p">(</span><span class="n">BlockStoreCore</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span> <span class="p">(</span><span class="n">chain</span><span class="p">,</span> <span class="n">database</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">set</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">exists</span> <span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                        <span class="k">return</span>
+                <span class="k">else</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">set</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">get</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">exists</span> <span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                        <span class="k">return</span> <span class="bp">None</span>
+                <span class="k">else</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">database</span><span class="o">.</span><span class="n">get</span> <span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="api">
+<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<p>The services offered by the dapp are exposed to client applications as APIs.
+These APIs are implemented in the next code-block, where we extend the class dapp.API,
+and we create a dict object which contains new API calls. Then, we
+write our two APIs:</p>
+<ul class="simple">
+<li>set (key,value) : creates a set message with a new key-value pair, and returns message broadcasting information;</li>
+<li>get (key) : gets a value for a given key, by invoking the Core.get method.</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BlockStoreAPI</span> <span class="p">(</span><span class="n">dapp</span><span class="o">.</span><span class="n">API</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">dht</span><span class="p">,</span> <span class="n">api</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">api</span> <span class="o">=</span> <span class="n">api</span>
+                <span class="n">rpcmethods</span> <span class="o">=</span> <span class="p">{}</span>
+
+                <span class="n">rpcmethods</span><span class="p">[</span><span class="s">&quot;get&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s">&quot;call&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">method_get</span><span class="p">,</span>
+                        <span class="s">&quot;help&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;key&quot;</span><span class="p">],</span> <span class="s">&quot;return&quot;</span><span class="p">:</span> <span class="p">{}}</span>
+                <span class="p">}</span>
+
+                <span class="n">rpcmethods</span><span class="p">[</span><span class="s">&quot;set&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s">&quot;call&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">method_set</span><span class="p">,</span>
+                        <span class="s">&quot;help&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;key&quot;</span><span class="p">,</span> <span class="s">&quot;value&quot;</span><span class="p">],</span> <span class="s">&quot;return&quot;</span><span class="p">:</span> <span class="p">{}}</span>
+                <span class="p">}</span>
+
+                <span class="n">errors</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s">&#39;KEY_ALREADY_SET&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;code&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="s">&#39;message&#39;</span><span class="p">:</span> <span class="s">&#39;Key already set&#39;</span><span class="p">},</span>
+                        <span class="s">&#39;KEY_IS_NOT_SET&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;code&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="s">&#39;message&#39;</span><span class="p">:</span> <span class="s">&#39;Key is not set&#39;</span><span class="p">}</span>
+                <span class="p">}</span>
+
+                <span class="nb">super</span> <span class="p">(</span><span class="n">BlockStoreAPI</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">core</span><span class="p">,</span> <span class="n">dht</span><span class="p">,</span> <span class="n">rpcmethods</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span>
+
+
+        <span class="k">def</span> <span class="nf">method_get</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">get</span> <span class="p">(</span><span class="n">key</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">createErrorResponse</span> <span class="p">(</span><span class="s">&#39;KEY_IS_NOT_SET&#39;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="n">v</span>
+
+        <span class="k">def</span> <span class="nf">method_set</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">get</span> <span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">createErrorResponse</span> <span class="p">(</span><span class="s">&#39;KEY_ALREADY_SET&#39;</span><span class="p">)</span>
+
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">BlockStoreMessage</span><span class="o">.</span><span class="n">set</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+                <span class="p">[</span><span class="n">datahash</span><span class="p">,</span> <span class="n">outscript</span><span class="p">,</span> <span class="n">tempid</span><span class="p">]</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">toOutputScript</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dht</span><span class="p">)</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s">&quot;outscript&quot;</span><span class="p">:</span> <span class="n">outscript</span><span class="p">,</span>
+                        <span class="s">&quot;datahash&quot;</span><span class="p">:</span> <span class="n">datahash</span><span class="p">,</span>
+                        <span class="s">&quot;tempid&quot;</span><span class="p">:</span> <span class="n">tempid</span><span class="p">,</span>
+                        <span class="s">&quot;fee&quot;</span><span class="p">:</span> <span class="n">proto</span><span class="o">.</span><span class="n">Protocol</span><span class="o">.</span><span class="n">estimateFee</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">getChainCode</span> <span class="p">(),</span>
+                                                                <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span> <span class="p">(</span><span class="n">value</span><span class="p">))</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mixing-all-classes">
+<h3>Mixing all classes<a class="headerlink" href="#mixing-all-classes" title="Permalink to this headline">¶</a></h3>
+<p>Finally, we bind all the classes created so far. We use the method handleMessage to tell the framework daemon
+how to handle each message.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">blockstore</span> <span class="p">(</span><span class="n">dapp</span><span class="o">.</span><span class="n">Dapp</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chain</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">dht</span><span class="p">,</span> <span class="n">apiMaster</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">core</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BlockStoreCore</span> <span class="p">(</span><span class="n">chain</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+                <span class="n">apiprov</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">BlockStoreAPI</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">core</span><span class="p">,</span> <span class="n">dht</span><span class="p">,</span> <span class="n">apiMaster</span><span class="p">)</span>
+                <span class="nb">super</span> <span class="p">(</span><span class="n">blockstore</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">proto</span><span class="o">.</span><span class="n">BlockStoreProto</span><span class="o">.</span><span class="n">DAPP_CODE</span><span class="p">,</span>
+                                <span class="n">proto</span><span class="o">.</span><span class="n">BlockStoreProto</span><span class="o">.</span><span class="n">METHOD_LIST</span><span class="p">,</span> <span class="n">chain</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">dht</span><span class="p">,</span> <span class="n">apiprov</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">handleMessage</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">Method</span> <span class="o">==</span> <span class="n">proto</span><span class="o">.</span><span class="n">BlockStoreProto</span><span class="o">.</span><span class="n">METHOD_SET</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">pluginfo</span> <span class="p">(</span><span class="s">&#39;Found new message </span><span class="si">%s</span><span class="s">: set </span><span class="si">%s</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">Hash</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">Data</span><span class="p">[</span><span class="s">&#39;key&#39;</span><span class="p">])</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set</span> <span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">Data</span><span class="p">[</span><span class="s">&#39;key&#39;</span><span class="p">],</span> <span class="n">m</span><span class="o">.</span><span class="n">Data</span><span class="p">[</span><span class="s">&#39;value&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="client-library">
+<h2>Client library<a class="headerlink" href="#client-library" title="Permalink to this headline">¶</a></h2>
+<p>Now we edit the dapp part used directly by clients, located at myfirstdapp/library/. The empty template
+has a file called myfirstdapp/library/EmptyManager.py, but we can rename it with a better name, like &#8220;MyFirstManager.py&#8221;.</p>
+<p>In our library, we define a module that binds the API calls described after, which will be used to write client applications. We
+do this by extending the DappManager. This class includes the services of our
+dapp, by binding the API calls myfirstdapp.get and myfirstdapp.set. The method set only creates
+and broadcasts a new message containing the given key-value pair; the method
+get performs a consensus query to nodes, and returns the resulting value.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyFirstManager</span> <span class="p">(</span><span class="n">DappManager</span><span class="o">.</span><span class="n">DappManager</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">consensusManager</span><span class="p">,</span> <span class="n">wallet</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+                <span class="nb">super</span> <span class="p">(</span><span class="n">MyFirstManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">consensusManager</span><span class="p">,</span> <span class="n">wallet</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">set</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+                <span class="n">cid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_produce_transaction</span> <span class="p">(</span><span class="s">&#39;myfirstdapp.set&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">])</span>
+                <span class="k">return</span> <span class="n">cid</span>
+
+        <span class="k">def</span> <span class="nf">get</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">consensusManager</span><span class="o">.</span><span class="n">jsonConsensusCall</span> <span class="p">(</span><span class="s">&#39;myfirstdapp.get&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">key</span><span class="p">])</span>
+                <span class="k">return</span> <span class="n">r</span><span class="p">[</span><span class="s">&#39;result&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-usage">
+<h2>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
+<p>We now exploit the created dapp for writing a client application. We first create a ConsensusManager,
+and we initialize it with a static set of nodes (at the moment we can use the our local contractvmd instance).</p>
+<p>Then we create a Wallet object, by using a local instance of
+bitcoin-core with private keys saved in the file app.wallet.</p>
+<p>Next we create a MyFirstManager, by using the ConsensusManager and Wallet objects
+created before. The script asks the user for a key-value pair, and
+it publishes it to the framework. Then, the script asks the
+user for a key, and then queries and returns the associated value (if any).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">libcontractvm</span> <span class="kn">import</span> <span class="n">Wallet</span><span class="p">,</span> <span class="n">WalletNode</span><span class="p">,</span> <span class="n">ConsensusManager</span>
+<span class="kn">from</span> <span class="nn">myfirstdapp</span> <span class="kn">import</span> <span class="n">MyFirstManager</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">config</span>
+
+<span class="n">consMan</span> <span class="o">=</span> <span class="n">ConsensusManager</span><span class="o">.</span><span class="n">ConsensusManager</span> <span class="p">()</span>
+<span class="n">consMan</span><span class="o">.</span><span class="n">addNode</span> <span class="p">(</span><span class="s">&quot;http://127.0.0.1:8181&quot;</span><span class="p">)</span>
+
+<span class="n">wallet</span><span class="o">=</span><span class="n">WalletNode</span><span class="o">.</span><span class="n">WalletNode</span> <span class="p">(</span><span class="n">chain</span><span class="o">=</span><span class="s">&#39;XLT&#39;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">WALLET_NODE_URL</span><span class="p">,</span>
+                                <span class="n">wallet_file</span><span class="o">=</span><span class="s">&#39;data/test_xltnode_a.wallet&#39;</span><span class="p">)</span>
+
+<span class="n">bsMan</span> <span class="o">=</span> <span class="n">MyFirstManager</span><span class="o">.</span><span class="n">MyFirstManager</span> <span class="p">(</span><span class="n">consMan</span><span class="p">,</span> <span class="n">wallet</span><span class="o">=</span><span class="n">wallet</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">set_key</span> <span class="p">():</span>
+        <span class="n">ykey</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span><span class="s">&#39;Insert a key to set: &#39;</span><span class="p">)</span>
+        <span class="n">yvalue</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span><span class="s">&#39;Insert a value to set: &#39;</span><span class="p">)</span>
+        <span class="n">bsMan</span><span class="o">.</span><span class="n">set</span> <span class="p">(</span><span class="n">ykey</span><span class="p">,</span> <span class="n">yvalue</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_key</span> <span class="p">():</span>
+        <span class="n">ykey</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span><span class="s">&#39;Insert a key to get: &#39;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">bsMan</span><span class="o">.</span><span class="n">get</span> <span class="p">(</span><span class="n">ykey</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="n">ykey</span><span class="p">,</span><span class="s">&#39;=&#39;</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;set&#39;</span><span class="p">:</span>
+                        <span class="n">set_key</span> <span class="p">()</span>
+                        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+                <span class="k">elif</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;get&#39;</span><span class="p">:</span>
+                        <span class="n">get_key</span> <span class="p">()</span>
+                        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">print</span> <span class="p">(</span><span class="s">&#39;usage:&#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;get|set&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -147,10 +430,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tutorial-dappman.html" class="btn btn-neutral float-right" title="Dappman: the dapp manager" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="tutorials.html" class="btn btn-neutral" title="Tutorials" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tutorial-dappman.html" class="btn btn-neutral" title="Dappman: the dapp manager" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
