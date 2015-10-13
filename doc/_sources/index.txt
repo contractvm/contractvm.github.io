@@ -8,9 +8,8 @@ Contents:
 .. toctree::
 	:maxdepth: 2
 
-	intro
-	quickstart
-	tutorial
+	installation
+	tutorials
 
 
 Indices and tables
