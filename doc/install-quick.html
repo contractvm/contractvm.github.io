@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Introduction &mdash; Contractvm 0.1 documentation</title>
+    <title>Quick install &mdash; Contractvm 0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,35 +24,45 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Contractvm 0.1 documentation" href="index.html" />
-    <link rel="next" title="Installation" href="installation.html" />
-    <link rel="prev" title="Contractvm" href="index.html" /> 
+    <link rel="up" title="Installation" href="installation.html" />
+    <link rel="next" title="Daemon start" href="install-start.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
           <span>Contractvm 0.1 documentation</span></a></h1>
-        <h2 class="heading"><span>Introduction</span></h2>
+        <h2 class="heading"><span>Quick install</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="index.html">Contractvm</a>
+        «&#160;&#160;<a href="installation.html">Installation</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="installation.html">Installation</a>&#160;&#160;»
+        <a href="install-start.html">Daemon start</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="quick-install">
+<h1>Quick install<a class="headerlink" href="#quick-install" title="Permalink to this headline">¶</a></h1>
+<p>At the moment, contractvm has some requirements and it is tested only on linux systems; requirements are:</p>
 <ul class="simple">
+<li>python3 (3.4 or greater)</li>
+<li>python3-pip</li>
 </ul>
+<p>You can easily install them in ubuntu linux by typing:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install python3 python3-pip
+</pre></div>
 </div>
+<p>Now download and execute the quick installation script provided in contractvmd:</p>
+<div class="highlight-bash"><div class="highlight"><pre>curl https://raw.githubusercontent.com/contractvm/contractvmd/master/quickinstall.sh <span class="p">|</span> sh
+</pre></div>
+</div>
+<p>After the script execution, the contractvmd daemon, libraries and dapp manager should be installed.</p>
 </div>
 
 
@@ -60,11 +70,11 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="index.html">Contractvm</a>
+        «&#160;&#160;<a href="installation.html">Installation</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="installation.html">Installation</a>&#160;&#160;»
+        <a href="install-start.html">Daemon start</a>&#160;&#160;»
         </p>
 
       </div>

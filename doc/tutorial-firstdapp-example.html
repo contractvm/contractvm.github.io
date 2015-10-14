@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Example usage &mdash; Contractvm 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Contractvm 0.1 documentation" href="index.html" />
+    <link rel="up" title="Writing your first Dapp" href="tutorial-firstdapp.html" />
+    <link rel="prev" title="Client library" href="tutorial-firstdapp-lib.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Contractvm 0.1 documentation</span></a></h1>
+        <h2 class="heading"><span>Example usage</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="tutorial-firstdapp-lib.html">Client library</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="example-usage">
+<h1>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h1>
+<p>We now exploit the created dapp for writing a client application. We first create a <strong>ConsensusManager</strong>,
+and we initialize it with a static set of nodes (at the moment we can use the our local contractvmd instance).</p>
+<p>Then we create a <strong>Wallet</strong> object, by using a local instance of
+<em>bitcoin-core</em> with private keys saved in the file <em>app.wallet</em>.</p>
+<p>Next we create a <strong>MyFirstManager</strong>, by using the <em>ConsensusManager</em> and <em>Wallet</em> objects
+created before. The script asks the user for a key-value pair, and
+it publishes it to the framework. Then, the script asks the
+user for a key, and then queries and returns the associated value (if any).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">libcontractvm</span> <span class="kn">import</span> <span class="n">Wallet</span><span class="p">,</span> <span class="n">WalletNode</span><span class="p">,</span> <span class="n">ConsensusManager</span>
+<span class="kn">from</span> <span class="nn">myfirstdapp</span> <span class="kn">import</span> <span class="n">MyFirstManager</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">config</span>
+
+<span class="n">consMan</span> <span class="o">=</span> <span class="n">ConsensusManager</span><span class="o">.</span><span class="n">ConsensusManager</span> <span class="p">()</span>
+<span class="n">consMan</span><span class="o">.</span><span class="n">bootstrap</span> <span class="p">(</span><span class="s">&quot;http://127.0.0.1:8181&quot;</span><span class="p">)</span>
+
+<span class="n">wallet</span><span class="o">=</span><span class="n">WalletNode</span><span class="o">.</span><span class="n">WalletNode</span> <span class="p">(</span><span class="n">chain</span><span class="o">=</span><span class="s">&#39;XLT&#39;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">WALLET_NODE_URL</span><span class="p">,</span>
+                                <span class="n">wallet_file</span><span class="o">=</span><span class="s">&#39;data/test_xltnode_a.wallet&#39;</span><span class="p">)</span>
+
+<span class="n">bsMan</span> <span class="o">=</span> <span class="n">MyFirstManager</span><span class="o">.</span><span class="n">MyFirstManager</span> <span class="p">(</span><span class="n">consMan</span><span class="p">,</span> <span class="n">wallet</span><span class="o">=</span><span class="n">wallet</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">set_key</span> <span class="p">():</span>
+        <span class="n">ykey</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span><span class="s">&#39;Insert a key to set: &#39;</span><span class="p">)</span>
+        <span class="n">yvalue</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span><span class="s">&#39;Insert a value to set: &#39;</span><span class="p">)</span>
+        <span class="n">bsMan</span><span class="o">.</span><span class="n">set</span> <span class="p">(</span><span class="n">ykey</span><span class="p">,</span> <span class="n">yvalue</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_key</span> <span class="p">():</span>
+        <span class="n">ykey</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span><span class="s">&#39;Insert a key to get: &#39;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">bsMan</span><span class="o">.</span><span class="n">get</span> <span class="p">(</span><span class="n">ykey</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="n">ykey</span><span class="p">,</span><span class="s">&#39;=&#39;</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;set&#39;</span><span class="p">:</span>
+                        <span class="n">set_key</span> <span class="p">()</span>
+                        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+                <span class="k">elif</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;get&#39;</span><span class="p">:</span>
+                        <span class="n">get_key</span> <span class="p">()</span>
+                        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">print</span> <span class="p">(</span><span class="s">&#39;usage:&#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;get|set&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="tutorial-firstdapp-lib.html">Client library</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Davide Gessa.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>
