@@ -156,15 +156,7 @@ write our two APIs:</p>
                         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">createErrorResponse</span> <span class="p">(</span><span class="s">&#39;KEY_ALREADY_SET&#39;</span><span class="p">)</span>
 
                 <span class="n">msg</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">BlockStoreMessage</span><span class="o">.</span><span class="n">set</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-                <span class="p">[</span><span class="n">datahash</span><span class="p">,</span> <span class="n">outscript</span><span class="p">,</span> <span class="n">tempid</span><span class="p">]</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">toOutputScript</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dht</span><span class="p">)</span>
-                <span class="n">r</span> <span class="o">=</span> <span class="p">{</span>
-                        <span class="s">&quot;outscript&quot;</span><span class="p">:</span> <span class="n">outscript</span><span class="p">,</span>
-                        <span class="s">&quot;datahash&quot;</span><span class="p">:</span> <span class="n">datahash</span><span class="p">,</span>
-                        <span class="s">&quot;tempid&quot;</span><span class="p">:</span> <span class="n">tempid</span><span class="p">,</span>
-                        <span class="s">&quot;fee&quot;</span><span class="p">:</span> <span class="n">proto</span><span class="o">.</span><span class="n">Protocol</span><span class="o">.</span><span class="n">estimateFee</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">getChainCode</span> <span class="p">(),</span>
-                                                                <span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span> <span class="p">(</span><span class="n">value</span><span class="p">))</span>
-                <span class="p">}</span>
-                <span class="k">return</span> <span class="n">r</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">createTransactionResponse</span> <span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -172,11 +164,11 @@ write our two APIs:</p>
 <h2>Mixing all classes<a class="headerlink" href="#mixing-all-classes" title="Permalink to this headline">¶</a></h2>
 <p>Finally, we bind all the classes created so far by extending the <strong>dapp.Dapp</strong> class. We use the method <em>handleMessage</em> to tell the framework daemon
 how to handle each message.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">blockstore</span> <span class="p">(</span><span class="n">dapp</span><span class="o">.</span><span class="n">Dapp</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">myfirstdapp</span> <span class="p">(</span><span class="n">dapp</span><span class="o">.</span><span class="n">Dapp</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">chain</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">dht</span><span class="p">,</span> <span class="n">apiMaster</span><span class="p">):</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">core</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">BlockStoreCore</span> <span class="p">(</span><span class="n">chain</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
                 <span class="n">apiprov</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">BlockStoreAPI</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">core</span><span class="p">,</span> <span class="n">dht</span><span class="p">,</span> <span class="n">apiMaster</span><span class="p">)</span>
-                <span class="nb">super</span> <span class="p">(</span><span class="n">blockstore</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">proto</span><span class="o">.</span><span class="n">BlockStoreProto</span><span class="o">.</span><span class="n">DAPP_CODE</span><span class="p">,</span>
+                <span class="nb">super</span> <span class="p">(</span><span class="n">myfirstdapp</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">proto</span><span class="o">.</span><span class="n">BlockStoreProto</span><span class="o">.</span><span class="n">DAPP_CODE</span><span class="p">,</span>
                                 <span class="n">proto</span><span class="o">.</span><span class="n">BlockStoreProto</span><span class="o">.</span><span class="n">METHOD_LIST</span><span class="p">,</span> <span class="n">chain</span><span class="p">,</span> <span class="n">db</span><span class="p">,</span> <span class="n">dht</span><span class="p">,</span> <span class="n">apiprov</span><span class="p">)</span>
 
         <span class="k">def</span> <span class="nf">handleMessage</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
