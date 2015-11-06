@@ -61,7 +61,7 @@ get performs a consensus query to nodes, and returns the resulting value.</p>
                 <span class="nb">super</span> <span class="p">(</span><span class="n">MyFirstManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">consensusManager</span><span class="p">,</span> <span class="n">wallet</span><span class="p">)</span>
 
         <span class="k">def</span> <span class="nf">set</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-                <span class="n">cid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_produce_transaction</span> <span class="p">(</span><span class="s">&#39;myfirstdapp.set&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">])</span>
+                <span class="n">cid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">produceTransaction</span> <span class="p">(</span><span class="s">&#39;myfirstdapp.set&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">])</span>
                 <span class="k">return</span> <span class="n">cid</span>
 
         <span class="k">def</span> <span class="nf">get</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
