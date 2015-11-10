@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Using Java &mdash; Contractvm 0.6 documentation</title>
+    <title>Writing your first Dapp &mdash; Contractvm 0.6 documentation</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,13 +25,13 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Contractvm 0.6 documentation" href="index.html" />
     <link rel="up" title="Tutorials" href="tutorials.html" />
-    <link rel="next" title="Using other programming languages" href="tutorial-langs.html" />
+    <link rel="next" title="Dapp" href="tutorial-firstdapp-dapp.html" />
     <link rel="prev" title="Dappman: the dapp manager" href="tutorial-dappman.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
           <span>Contractvm 0.6 documentation</span></a></h1>
-        <h2 class="heading"><span>Using Java</span></h2>
+        <h2 class="heading"><span>Writing your first Dapp</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
@@ -40,24 +40,92 @@
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="tutorial-langs.html">Using other programming languages</a>&#160;&#160;»
+        <a href="tutorial-firstdapp-dapp.html">Dapp</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="using-java">
-<h1>Using Java<a class="headerlink" href="#using-java" title="Permalink to this headline">¶</a></h1>
-<p>Our suggestion for using Java in dapp sources, is to use rubicon library.
-You can install it by adding the dependency &#8220;rubicon-java&#8221; in the requirements.txt file.</p>
-<p>Then you can use any Java class in your dapp source code as follow:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">rubicon.java</span> <span class="kn">import</span> <span class="n">JavaClass</span>
-
-<span class="n">URL</span> <span class="o">=</span> <span class="n">JavaClass</span><span class="p">(</span><span class="s">&quot;java/net/URL&quot;</span><span class="p">)</span>
-<span class="n">url</span> <span class="o">=</span> <span class="n">URL</span><span class="p">(</span><span class="s">&quot;http://pybee.org&quot;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">url</span><span class="o">.</span><span class="n">getHost</span><span class="p">()</span>
+  <div class="section" id="writing-your-first-dapp">
+<h1>Writing your first Dapp<a class="headerlink" href="#writing-your-first-dapp" title="Permalink to this headline">¶</a></h1>
+<p>This section is a brief tutorial for dapp developers. We illustrate how to
+write a dapp by commenting the source code of a decentralized
+key-value storage service. The full source code of this dapp is available at
+<a class="reference external" href="https://github.com/contractvm/cvm-dapp-blockstore">https://github.com/contractvm/cvm-dapp-blockstore</a>.
+The key-value storage dapp offers two APIs: <strong>set(key, value)</strong> and <strong>get(key)</strong>.
+A <em>set</em> request saves a new immutable key-value pair, while <em>get</em> retrieves a
+previously set value. Since set changes the state of the dapp, this API
+requires the client to publish a suitable message in the blockchain.
+Nodes scan the blockchain for new messages, and when they find a <em>set</em>
+request, they save the new key-value pair in their local database.
+Instead, executing a <em>get</em> does not require to publish
+any message, because nodes can handle this request internally.</p>
+<p>The dapp is split in two main parts: the first is the dapp which runs in nodes,
+while the second implements the library that client applications use
+to interact with the dapp. Note that, while we have chosen Python for developing
+this dapp, our framework supports arbitrary programming languages. The
+mechanism used to this purpose is standard: the programmer codes the core
+features  of dapp in her preferred language, and the framework uses them
+through the foreign function interface.</p>
+<p>We start by creating an empty dapp with the empty template:</p>
+<div class="highlight-bash"><div class="highlight"><pre>dappman -w
 </pre></div>
+</div>
+<div class="highlight-plain"><div class="highlight"><pre>Dapp name: myfirstdapp
+Description: This is my first dapp
+Authors (comma separated): Davide Gessa
+Select a template:
+         0 . empty (https://github.com/contractvm/cvm-dapp-empty)
+         1 . blockstore (https://github.com/contractvm/cvm-dapp-blockstore)
+         2 . helloworld (https://github.com/contractvm/cvm-dapp-helloworld)
+         3 . fifomom (https://github.com/contractvm/cvm-dapp-fifomom)
+         4 . cotst (https://github.com/contractvm/cvm-dapp-cotst)
+Template: 0
+Creating directory for dapp: myfirstdapp
+Downloading template: empty
+Extracting template
+Setting up directories
+String replace for dapp name
+Creating manifest.json
+Dapp myfirstdapp sucessfully created
+</pre></div>
+</div>
+<p>This command will create a new dapp tree:</p>
+<div class="highlight-bash"><div class="highlight"><pre>myfirstdapp/
+        requirements.txt
+        setup.py
+        README.md
+        manifest.json
+        dapp/
+                myfirstdapp.py
+                __init__.py
+        library/
+                myfirstdapp/
+                        __init__.py
+                        EmptyManager.py
+        samples/
+                config.py
+                data
+</pre></div>
+</div>
+<p>Now every time we want to install the updated dapp, we type:</p>
+<div class="highlight-bash"><div class="highlight"><pre>dappman -i /path/of/your/dapp/myfirstdapp
+</pre></div>
+</div>
+<p>Now we can write the parts of the dapp:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial-firstdapp-dapp.html">Dapp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial-firstdapp-dapp.html#protocol-and-messages">Protocol and messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial-firstdapp-dapp.html#core">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial-firstdapp-dapp.html#api">API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial-firstdapp-dapp.html#mixing-all-classes">Mixing all classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial-firstdapp-lib.html">Client library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial-firstdapp-example.html">Example usage</a></li>
+</ul>
 </div>
 </div>
 
@@ -70,7 +138,7 @@ You can install it by adding the dependency &#8220;rubicon-java&#8221; in the re
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="tutorial-langs.html">Using other programming languages</a>&#160;&#160;»
+        <a href="tutorial-firstdapp-dapp.html">Dapp</a>&#160;&#160;»
         </p>
 
       </div>
