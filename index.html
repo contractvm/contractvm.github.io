@@ -21,10 +21,46 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+
+<style>
+	.navbar {
+		font-size: 115%;
+		height: 350px;
+		background-image: url(media/gear-header.png);
+	}
+
+	.navbar-inverse .navbar-nav > li > a {
+		color: #fafafa;
+	}
+
+	.navbar-inverse .navbar-nav > li > a:hover {
+		opacity: 0.7;
+	}
+
+	.navbar-inverse .navbar-brand {
+		color: #fafafa;
+	}
+
+	.navbar-inverse .navbar-brand:hover {
+		opacity: 0.7;
+	}
+
+	.marketing {
+		background-color: #444;
+		color: #fafafa;
+	}
+
+	.marketing h2, .marketing i { color: #2196F3; }
+	.marketing i { opacity: 0.9; }
+
+	.featurette-heading { font-size: 250%; }
+
+</style>
+
 <!-- NAVBAR
 ================================================== -->
   <body>
-        <nav class="navbar navbar-inverse navbar-static-top navbar-default" style="font-size: 115%">
+        <nav class="navbar navbar-inverse navbar-static-top navbar-default">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -37,7 +73,10 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+              	<li><a href="#">How it works</a></li>
+              	<li><a href="#">Features</a></li>
+              	<li><a href="#">Get started</a></li>
                 <!--<li><a href="#about">About</a></li>-->
               </ul>
 	      <ul class="nav navbar-nav navbar-right">
@@ -45,70 +84,70 @@
 		<li><a href="https://github.com/contractvm" target="_blank"><i class="fa fa-github"></i> Source code</a></li>
 	      </ul>
             </div>
+
+			<div align="center">
+				<br>
+				<h1 style="color: #fafafa">contractvm</h1>
+				<h3 style="color: #fafafa">a general-purpose framework for <br>writing decentralized applications</h3>
+			</div>
           </div>
         </nav>
 
-	<div style="background-color: #f1f1f1; margin-top: -22px;">
-		<div class="container row">
-			<div class="col-md-4">
-				<div align="center">
-					<br>
-					<img src="media/cvm-logo.png" width="200px"/>
-				</div>
-			</div>
-			<div class="col-md-8">
-				<h3>A general-purpose framework for dapps</h3>
-				<p class="lead">
+	<div style="background-color: #f1f1f1; margin-top: -22px; padding-left: 10%; padding-right: 10%;">
+		<br>
+		<p class="lead" style="text-align: center">
 					Contractvm is a general-purpose decentralized framework based on blockchain.
-					The framework is extensible through a plugin infrastructure that allows to implement arbitrary 
-					decentralized applications (dapps) in an easy way, providing the necessary abstraction layer. 
-					In contrast to existing solutions, contractvm doesn't verify computation state of dapps,
-					proposing a client-side consensus mechanism for mitigating malicious behaviours.</p>
-				<div align="right"><a class="btn btn-primary" href="https://contractvm.github.io/doc" target="_blank"><i class="fa fa-play"></i> Get started</a></div>
-				<br>
-			</div>
-		</div>
+					The framework allow to implement arbitrary decentralized applications in an easy way,
+					providing the necessary abstraction layer.
+					Contractvm dapps are executed in an open network of nodes that perform computations by processing
+					dapp interactions stored in messages. All messages are securely stored in an decentralized data structure
+					that combines an existing blockchain with a distributed hash table.
+		</p>
+		<div align="right"><a class="btn btn-primary" href="https://contractvm.github.io/doc" target="_blank"><i class="fa fa-play"></i> Get started</a></div>
+		<br><br>
 	</div>
 
-	<div class="container marketing">
+	<div class="marketing">
 	<br><br>
-      <div class="row">
-        <div class="col-lg-4">
-	  <div align="center">
-		<a href="#"><i class="fa fa-code" style="font-size: 1000%"></i></a>
-	        <h2>Develop</h2>
-        	<p class="lead">Write your decentralized service using the contractvm frameworks. The framework provides the necessary abstraction for decentralization.</p>
+		<div class="container">
+	      <div class="row">
+	        <div class="col-lg-4">
+		  <div align="center">
+			<a href="#"><i class="fa fa-code" style="font-size: 1000%"></i></a>
+		        <h2>Develop</h2>
+	        	<p class="lead">Write your decentralized service using the contractvm frameworks. The framework provides the necessary abstraction for decentralization.</p>
+		  </div>
+	        </div>
+	        <div class="col-lg-4">
+		  <div align="center">
+			<a href="#"><i class="fa fa-gears" style="font-size: 1000%"></i></a>
+	          	<h2>Deploy</h2>
+	          	<p class="lead">Deploy your decentralized application in the contractvm network. Distribuite and promote the adoption of your application.</p>
+		  </div>
+		</div>
+	        <div class="col-lg-4">
+		  <div align="center">
+			<a href="#"><i class="fa fa-check" style="font-size: 1000%"></i></a>
+	          	<h2>Use</h2>
+	          	<p class="lead">Write client applications using your decentralized service through the contractvm client library.</p>
+		  </div>
+	        </div>
+	      </div>
 	  </div>
-        </div>
-        <div class="col-lg-4">
-	  <div align="center">
-		<a href="#"><i class="fa fa-gears" style="font-size: 1000%"></i></a>
-          	<h2>Deploy</h2>
-          	<p class="lead">Deploy your decentralized application in the contractvm network. Distribuite and promote the adoption of your application.</p>
-	  </div>
-	</div>
-        <div class="col-lg-4">
-	  <div align="center">
-		<a href="#"><i class="fa fa-check" style="font-size: 1000%"></i></a>
-          	<h2>Use</h2>
-          	<p class="lead">Write client applications using your decentralized service through the contractvm client library.</p>
-	  </div>
-        </div>
-      </div>
-
-<!--<span class="text-muted">See for yourself.</span>-->
-<!--
-	<br>
-      <hr class="featurette-divider">
+  </div>
 	<br>
 
+
+	<!-- Features -->
+	<br>
+	<div class="container">
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Decentralized.</h2>
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="media/cvm-decentr.png" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" src="media/cvm-decentr.png" width="256px">
         </div>
       </div>
 
@@ -120,7 +159,7 @@
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" src="media/cvm-data-model.png" alt="Generic placeholder image">
+			<img class="featurette-image img-responsive center-block" src="media/coins.png" width="256px">
         </div>
       </div>
 
@@ -132,7 +171,7 @@
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="media/cvm-consensus.png" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" src="media/cvm-consensus.png" width="256px">
         </div>
       </div>
 
@@ -140,16 +179,25 @@
 
       <div class="row featurette">
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="media/cvm-consensus.png" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" src="media/prog-languages.png" width="256px">
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Language agnostic.</h2>
           <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
       </div>
--->
+  </div>
+<br>
 
-      <footer>
+  <div class="marketing">
+  <br><br>
+	  <div class="container">
+		  
+
+	</div>
+</div>
+<br>
+      <footer style="margin-right: 20px;">
         <p class="pull-right"><a href="#">Back to top</a></p>
       </footer>
     </div>

@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="cvm-consensus.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path3817"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3820"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+    <linearGradient
+       id="linearGradient3637">
+      <stop
+         id="stop3639"
+         style="stop-color:#f0f0f0;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3641"
+         style="stop-color:#dcdcdc;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       x1="45.447727"
+       y1="92.539597"
+       x2="45.447727"
+       y2="7.0165396"
+       id="ButtonShadow"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="scale(1.0058652,0.994169)">
+      <stop
+         id="stop3750"
+         style="stop-color:#000000;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3752"
+         style="stop-color:#000000;stop-opacity:0.58823532"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3737">
+      <stop
+         id="stop3739"
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3741"
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3700">
+      <stop
+         id="stop3702"
+         style="stop-color:#2276c5;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3704"
+         style="stop-color:#68baf4;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3174">
+      <feGaussianBlur
+         id="feGaussianBlur3176"
+         stdDeviation="1.71" />
+    </filter>
+    <linearGradient
+       x1="36.357143"
+       y1="6"
+       x2="36.357143"
+       y2="63.893143"
+       id="linearGradient3188"
+       xlink:href="#linearGradient3737"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       cx="48"
+       cy="90.171875"
+       r="42"
+       fx="48"
+       fy="90.171875"
+       id="radialGradient3619"
+       xlink:href="#linearGradient3737"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1573129,0,0,0.99590774,-7.5510206,0.19713193)" />
+    <linearGradient
+       x1="48"
+       y1="90"
+       x2="48"
+       y2="5.9877172"
+       id="linearGradient2843"
+       xlink:href="#linearGradient3700"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,100)" />
+    <clipPath
+       id="clipPath3625">
+      <path
+         d="M 0,0 0,96 96,96 96,0 0,0 z m 12,6 72,0 c 3.324,0 6,2.676 6,6 l 0,72 c 0,3.324 -2.676,6 -6,6 L 12,90 C 8.676,90 6,87.324 6,84 L 6,12 C 6,8.676 8.676,6 12,6 z"
+         inkscape:connector-curvature="0"
+         id="path3627"
+         style="fill:#ffffff;fill-opacity:1;stroke:none" />
+    </clipPath>
+    <linearGradient
+       x1="44.512066"
+       y1="6"
+       x2="44.512066"
+       y2="90.015434"
+       id="linearGradient3643"
+       xlink:href="#linearGradient3637"
+       gradientUnits="userSpaceOnUse" />
+    <clipPath
+       id="clipPath3649">
+      <rect
+         width="76"
+         height="76"
+         rx="4"
+         ry="4"
+         x="10"
+         y="10"
+         id="rect3651"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    </clipPath>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3657">
+      <feGaussianBlur
+         id="feGaussianBlur3659"
+         stdDeviation="1.14" />
+    </filter>
+    <linearGradient
+       x1="20.758585"
+       y1="1"
+       x2="20.758585"
+       y2="45.017357"
+       id="linearGradient3665"
+       xlink:href="#linearGradient4081"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.93022994,0,0,-0.93022994,23.674475,61.395341)" />
+    <linearGradient
+       x1="20.758585"
+       y1="1"
+       x2="20.758585"
+       y2="45.017357"
+       id="linearGradient3669"
+       xlink:href="#linearGradient4081"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.47268421,0.12665535,0.12665535,-0.47268421,44.47921,74.733655)" />
+    <linearGradient
+       id="linearGradient4081">
+      <stop
+         id="stop4083"
+         style="stop-color:#aaaaaa;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop4085"
+         style="stop-color:#f0f0f0;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       x1="45.447727"
+       y1="92.539597"
+       x2="45.447727"
+       y2="7.0165396"
+       id="ButtonShadow-0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0058652,0,0,0.994169,100,0)">
+      <stop
+         id="stop3750-8"
+         style="stop-color:#000000;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3752-5"
+         style="stop-color:#000000;stop-opacity:0.58823532"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       x1="32.251034"
+       y1="6.1317081"
+       x2="32.251034"
+       y2="90.238609"
+       id="linearGradient3780"
+       xlink:href="#ButtonShadow-0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0238095,0,0,-1.0119048,-1.1428571,98.071429)" />
+    <linearGradient
+       x1="32.251034"
+       y1="6.1317081"
+       x2="32.251034"
+       y2="90.238609"
+       id="linearGradient3772"
+       xlink:href="#ButtonShadow-0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0238095,0,0,-1.0119048,-1.1428571,98.071429)" />
+    <linearGradient
+       x1="32.251034"
+       y1="6.1317081"
+       x2="32.251034"
+       y2="90.238609"
+       id="linearGradient3725-6"
+       xlink:href="#ButtonShadow-0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0238095,0,0,-1.0119048,-1.1428571,98.071429)" />
+    <linearGradient
+       x1="32.251034"
+       y1="6.1317081"
+       x2="32.251034"
+       y2="90.238609"
+       id="linearGradient3721"
+       xlink:href="#ButtonShadow-0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,-1,0,97)" />
+    <linearGradient
+       x1="32.251034"
+       y1="6.1317081"
+       x2="32.251034"
+       y2="90.238609"
+       id="linearGradient3289"
+       xlink:href="#ButtonShadow-0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.0238095,0,0,-1.0119048,-1.1428571,98.071429)" />
+    <linearGradient
+       x1="36.357143"
+       y1="6"
+       x2="36.357143"
+       y2="63.893143"
+       id="linearGradient3188-2"
+       xlink:href="#linearGradient3737-2"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       id="linearGradient3737-2">
+      <stop
+         id="stop3739-0"
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3741-1"
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </linearGradient>
+    <radialGradient
+       cx="48"
+       cy="90.171875"
+       r="42"
+       fx="48"
+       fy="90.171875"
+       id="radialGradient3619-5"
+       xlink:href="#linearGradient3737-2"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1573129,0,0,0.99590774,-7.551021,0.1971319)" />
+    <linearGradient
+       x1="20.758585"
+       y1="1"
+       x2="20.758585"
+       y2="45.017357"
+       id="linearGradient4423"
+       xlink:href="#linearGradient4081"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.47268421,0.12665535,0.12665535,-0.47268421,44.47921,74.733655)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4081"
+       id="linearGradient3419"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.47268421,0.12665535,0.12665535,-0.47268421,-381.60582,200.78073)"
+       x1="20.758585"
+       y1="1"
+       x2="20.758585"
+       y2="45.017357" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.6345017"
+     inkscape:cx="372.04724"
+     inkscape:cy="496.21737"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1317"
+     inkscape:window-height="717"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g4324"
+       transform="translate(0.3834329,-1.7304523)"
+       inkscape:export-xdpi="186"
+       inkscape:export-ydpi="186">
+      <rect
+         inkscape:export-ydpi="186.99001"
+         inkscape:export-xdpi="186.99001"
+         inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+         ry="0"
+         rx="0"
+         y="559.48578"
+         x="358.09604"
+         height="40.610176"
+         width="84.125267"
+         id="rect2985"
+         style="fill:#8100ff;fill-opacity:0.76078431;stroke:none" />
+      <text
+         inkscape:export-ydpi="186.99001"
+         inkscape:export-xdpi="186.99001"
+         inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+         sodipodi:linespacing="125%"
+         id="text3048"
+         y="588.73816"
+         x="365.01999"
+         style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none"
+         xml:space="preserve"><tspan
+           style="font-weight:normal;font-size:24px;-inkscape-font-specification:Sans;fill:#ffffff"
+           y="588.73816"
+           x="365.01999"
+           id="tspan3050"
+           sodipodi:role="line">Client</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 325.17198,552.89028 33.30749,11.12316"
+       id="path3129"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3"
+       inkscape:connection-start="#g3104"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end="#rect2985"
+       inkscape:connection-end-point="d4"
+       inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+       inkscape:export-xdpi="186.99001"
+       inkscape:export-ydpi="186.99001" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="M 347.13644,629.10672 379.29852,598.3655"
+       id="path3131"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3"
+       inkscape:connection-start="#g3109"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end="#rect2985"
+       inkscape:connection-end-point="d4"
+       inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+       inkscape:export-xdpi="186.99001"
+       inkscape:export-ydpi="186.99001" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 400.23208,516.66737 0.20749,41.08796"
+       id="path3133"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3"
+       inkscape:connection-start="#g3114"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end="#rect2985"
+       inkscape:connection-end-point="d4"
+       inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+       inkscape:export-xdpi="186.99001"
+       inkscape:export-ydpi="186.99001" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 475.72686,554.32088 -33.12212,10.45829"
+       id="path3137"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3"
+       inkscape:connection-start="#g3124"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end="#rect2985"
+       inkscape:connection-end-point="d4"
+       inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+       inkscape:export-xdpi="186.99001"
+       inkscape:export-ydpi="186.99001" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart)"
+       d="m 421.53359,598.3655 29.55134,28.58505"
+       id="path3139"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="3"
+       inkscape:connection-start="#rect2985"
+       inkscape:connection-start-point="d4"
+       inkscape:connection-end="#g3119"
+       inkscape:connection-end-point="d4"
+       inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+       inkscape:export-xdpi="186.99001"
+       inkscape:export-ydpi="186.99001" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#aa00d4;fill-opacity:1;stroke:none"
+       x="442.26083"
+       y="616.91418"
+       id="text3141"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+       inkscape:export-xdpi="186.99001"
+       inkscape:export-ydpi="186.99001"><tspan
+         sodipodi:role="line"
+         id="tspan3143"
+         x="442.26083"
+         y="616.91418">42</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#aa00d4;fill-opacity:1;stroke:none"
+       x="328.30978"
+       y="554.14331"
+       id="text3141-6"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+       inkscape:export-xdpi="186.99001"
+       inkscape:export-ydpi="186.99001"><tspan
+         sodipodi:role="line"
+         id="tspan3143-2"
+         x="328.30978"
+         y="554.14331">42</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ff00cc;fill-opacity:1;stroke:none"
+       x="338.02991"
+       y="615.07825"
+       id="text3141-9"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+       inkscape:export-xdpi="186.99001"
+       inkscape:export-ydpi="186.99001"><tspan
+         sodipodi:role="line"
+         id="tspan3143-0"
+         x="338.02991"
+         y="615.07825">11</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#aa00d4;fill-opacity:1;stroke:none"
+       x="453.01889"
+       y="554.56134"
+       id="text3141-2"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+       inkscape:export-xdpi="186.99001"
+       inkscape:export-ydpi="186.99001"><tspan
+         sodipodi:role="line"
+         id="tspan3143-21"
+         x="453.01889"
+         y="554.56134">42</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ff6600;fill-opacity:1;stroke:none"
+       x="402.29431"
+       y="533.89557"
+       id="text3141-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+       inkscape:export-xdpi="186.99001"
+       inkscape:export-ydpi="186.99001"><tspan
+         sodipodi:role="line"
+         id="tspan3143-5"
+         x="402.29431"
+         y="533.89557">13</tspan></text>
+    <g
+       id="layer2"
+       style="display:none"
+       transform="translate(-602.97619,148.9325)">
+      <rect
+         width="86"
+         height="85"
+         rx="6"
+         ry="6"
+         x="5"
+         y="7"
+         clip-path="url(#clipPath3625)"
+         id="rect3745"
+         style="opacity:0.9;fill:url(#ButtonShadow);fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter3174)" />
+    </g>
+    <g
+       id="layer1-3"
+       style="display:none"
+       transform="translate(-602.97619,148.9325)">
+      <rect
+         width="84"
+         height="84"
+         rx="6"
+         ry="6"
+         x="6"
+         y="6"
+         id="rect2419"
+         style="opacity:0.7;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <path
+         d="m 14,10 c -2.216,0 -4,1.784 -4,4 l 0,68 c 0,2.216 1.784,4 4,4 l 68,0 c 2.216,0 4,-1.784 4,-4 l 0,-68 c 0,-2.216 -1.784,-4 -4,-4 l -68,0 z m 0,3.0625 68,0 c 0.578769,0 0.9375,0.358731 0.9375,0.9375 l 0,68 c 0,0.578769 -0.358731,0.9375 -0.9375,0.9375 l -68,0 c -0.578769,0 -0.9375,-0.358731 -0.9375,-0.9375 l 0,-68 c 0,-0.578769 0.358731,-0.9375 0.9375,-0.9375 z"
+         inkscape:connector-curvature="0"
+         id="rect3726"
+         style="opacity:0.07999998;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <path
+         d="M 12,6 C 8.676,6 6,8.676 6,12 l 0,72 c 0,3.324 2.676,6 6,6 l 72,0 c 3.324,0 6,-2.676 6,-6 L 90,12 C 90,8.676 87.324,6 84,6 L 12,6 z m 2,4 68,0 c 2.216,0 4,1.784 4,4 l 0,68 c 0,2.216 -1.784,4 -4,4 l -68,0 c -2.216,0 -4,-1.784 -4,-4 l 0,-68 c 0,-2.216 1.784,-4 4,-4 z"
+         inkscape:connector-curvature="0"
+         id="rect3629"
+         style="fill:url(#linearGradient3643);fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <path
+         d="M 12,6 C 8.676,6 6,8.676 6,12 l 0,2 0,68 0,2 c 0,0.334721 0.04135,0.6507 0.09375,0.96875 0.0487,0.295596 0.09704,0.596915 0.1875,0.875 0.00988,0.03038 0.020892,0.0636 0.03125,0.09375 0.098865,0.287771 0.2348802,0.547452 0.375,0.8125 0.1445918,0.273507 0.3156161,0.535615 0.5,0.78125 0.1843839,0.245635 0.3737765,0.473472 0.59375,0.6875 0.439947,0.428056 0.94291,0.814526 1.5,1.09375 0.278545,0.139612 0.5734731,0.246947 0.875,0.34375 -0.2562018,-0.100222 -0.4867109,-0.236272 -0.71875,-0.375 -0.00741,-0.0044 -0.023866,0.0045 -0.03125,0 -0.031933,-0.0193 -0.062293,-0.04251 -0.09375,-0.0625 -0.120395,-0.0767 -0.2310226,-0.163513 -0.34375,-0.25 -0.1061728,-0.0808 -0.2132809,-0.161112 -0.3125,-0.25 C 8.4783201,88.557317 8.3087904,88.373362 8.15625,88.1875 8.0486711,88.057245 7.9378561,87.922215 7.84375,87.78125 7.818661,87.74287 7.805304,87.69538 7.78125,87.65625 7.716487,87.553218 7.6510225,87.451733 7.59375,87.34375 7.4927417,87.149044 7.3880752,86.928049 7.3125,86.71875 7.30454,86.69694 7.288911,86.6782 7.28125,86.65625 7.2494249,86.5643 7.2454455,86.469419 7.21875,86.375 7.1884177,86.268382 7.1483606,86.171969 7.125,86.0625 7.0521214,85.720988 7,85.364295 7,85 L 7,83 7,15 7,13 C 7,10.218152 9.2181517,8 12,8 l 2,0 68,0 2,0 c 2.781848,0 5,2.218152 5,5 l 0,2 0,68 0,2 c 0,0.364295 -0.05212,0.720988 -0.125,1.0625 -0.04415,0.206893 -0.08838,0.397658 -0.15625,0.59375 -0.0077,0.02195 -0.0233,0.04069 -0.03125,0.0625 -0.06274,0.173739 -0.138383,0.367449 -0.21875,0.53125 -0.04158,0.0828 -0.07904,0.169954 -0.125,0.25 -0.0546,0.09721 -0.126774,0.18835 -0.1875,0.28125 -0.09411,0.140965 -0.204921,0.275995 -0.3125,0.40625 -0.143174,0.17445 -0.303141,0.346998 -0.46875,0.5 -0.01117,0.0102 -0.01998,0.02115 -0.03125,0.03125 -0.138386,0.125556 -0.285091,0.234436 -0.4375,0.34375 -0.102571,0.07315 -0.204318,0.153364 -0.3125,0.21875 -0.0074,0.0045 -0.02384,-0.0044 -0.03125,0 -0.232039,0.138728 -0.462548,0.274778 -0.71875,0.375 0.301527,-0.0968 0.596455,-0.204138 0.875,-0.34375 0.55709,-0.279224 1.060053,-0.665694 1.5,-1.09375 0.219973,-0.214028 0.409366,-0.441865 0.59375,-0.6875 0.184384,-0.245635 0.355408,-0.507743 0.5,-0.78125 0.14012,-0.265048 0.276135,-0.524729 0.375,-0.8125 0.01041,-0.03078 0.02133,-0.06274 0.03125,-0.09375 0.09046,-0.278085 0.1388,-0.579404 0.1875,-0.875 C 89.95865,84.6507 90,84.334721 90,84 l 0,-2 0,-68 0,-2 C 90,8.676 87.324,6 84,6 L 12,6 z"
+         inkscape:connector-curvature="0"
+         id="rect3728"
+         style="fill:url(#linearGradient3188);fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <path
+         d="M 12,90 C 8.676,90 6,87.324 6,84 L 6,82 6,14 6,12 c 0,-0.334721 0.04135,-0.6507 0.09375,-0.96875 0.0487,-0.295596 0.09704,-0.596915 0.1875,-0.875 C 6.29113,10.12587 6.302142,10.09265 6.3125,10.0625 6.411365,9.774729 6.5473802,9.515048 6.6875,9.25 6.8320918,8.976493 7.0031161,8.714385 7.1875,8.46875 7.3718839,8.223115 7.5612765,7.995278 7.78125,7.78125 8.221197,7.353194 8.72416,6.966724 9.28125,6.6875 9.559795,6.547888 9.8547231,6.440553 10.15625,6.34375 9.9000482,6.443972 9.6695391,6.580022 9.4375,6.71875 c -0.00741,0.0044 -0.023866,-0.0045 -0.03125,0 -0.031933,0.0193 -0.062293,0.04251 -0.09375,0.0625 -0.120395,0.0767 -0.2310226,0.163513 -0.34375,0.25 -0.1061728,0.0808 -0.2132809,0.161112 -0.3125,0.25 C 8.4783201,7.442683 8.3087904,7.626638 8.15625,7.8125 8.0486711,7.942755 7.9378561,8.077785 7.84375,8.21875 7.818661,8.25713 7.805304,8.30462 7.78125,8.34375 7.716487,8.446782 7.6510225,8.548267 7.59375,8.65625 7.4927417,8.850956 7.3880752,9.071951 7.3125,9.28125 7.30454,9.30306 7.288911,9.3218 7.28125,9.34375 7.2494249,9.4357 7.2454455,9.530581 7.21875,9.625 7.1884177,9.731618 7.1483606,9.828031 7.125,9.9375 7.0521214,10.279012 7,10.635705 7,11 l 0,2 0,68 0,2 c 0,2.781848 2.2181517,5 5,5 l 2,0 68,0 2,0 c 2.781848,0 5,-2.218152 5,-5 l 0,-2 0,-68 0,-2 C 89,10.635705 88.94788,10.279012 88.875,9.9375 88.83085,9.730607 88.78662,9.539842 88.71875,9.34375 88.71105,9.3218 88.69545,9.30306 88.6875,9.28125 88.62476,9.107511 88.549117,8.913801 88.46875,8.75 88.42717,8.6672 88.38971,8.580046 88.34375,8.5 88.28915,8.40279 88.216976,8.31165 88.15625,8.21875 88.06214,8.077785 87.951329,7.942755 87.84375,7.8125 87.700576,7.63805 87.540609,7.465502 87.375,7.3125 87.36383,7.3023 87.35502,7.29135 87.34375,7.28125 87.205364,7.155694 87.058659,7.046814 86.90625,6.9375 86.803679,6.86435 86.701932,6.784136 86.59375,6.71875 c -0.0074,-0.0045 -0.02384,0.0044 -0.03125,0 -0.232039,-0.138728 -0.462548,-0.274778 -0.71875,-0.375 0.301527,0.0968 0.596455,0.204138 0.875,0.34375 0.55709,0.279224 1.060053,0.665694 1.5,1.09375 0.219973,0.214028 0.409366,0.441865 0.59375,0.6875 0.184384,0.245635 0.355408,0.507743 0.5,0.78125 0.14012,0.265048 0.276135,0.524729 0.375,0.8125 0.01041,0.03078 0.02133,0.06274 0.03125,0.09375 0.09046,0.278085 0.1388,0.579404 0.1875,0.875 C 89.95865,11.3493 90,11.665279 90,12 l 0,2 0,68 0,2 c 0,3.324 -2.676,6 -6,6 l -72,0 z"
+         inkscape:connector-curvature="0"
+         id="path3615"
+         style="opacity:0.6;fill:url(#radialGradient3619);fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <rect
+         width="84"
+         height="84"
+         rx="6"
+         ry="6"
+         x="6"
+         y="106"
+         id="rect2841"
+         style="fill:url(#linearGradient2843);fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <rect
+         width="76"
+         height="76"
+         rx="4"
+         ry="4"
+         x="10"
+         y="110"
+         id="rect3634"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <path
+         d="m 14,9 c -2.752703,0 -5,2.247297 -5,5 l 0,68 c 0,2.752703 2.247297,5 5,5 l 68,0 c 2.752703,0 5,-2.247297 5,-5 L 87,14 C 87,11.247297 84.752703,9 82,9 L 14,9 z m 0,2 68,0 c 1.679297,0 3,1.320703 3,3 l 0,68 c 0,1.679297 -1.320703,3 -3,3 l -68,0 c -1.679297,0 -3,-1.320703 -3,-3 l 0,-68 c 0,-1.679297 1.320703,-3 3,-3 z"
+         inkscape:connector-curvature="0"
+         transform="translate(-110,0)"
+         clip-path="url(#clipPath3649)"
+         id="rect3647"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;color:#000000;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3657);enable-background:accumulate;font-family:Abandoned Bitplane;-inkscape-font-specification:Abandoned Bitplane" />
+      <path
+         d="m 14.089286,10 c -2.216,0 -4,1.784 -4,4 l 0,68 c 0,2.216 1.784,4 4,4 l 68,0 c 2.216,0 4,-1.784 4,-4 l 0,-68 c 0,-2.216 -1.784,-4 -4,-4 l -68,0 z m 0,2 68,0 c 1.140301,0 2,0.859699 2,2 l 0,68 c 0,1.140301 -0.859699,2 -2,2 l -68,0 c -1.140301,0 -2,-0.859699 -2,-2 l 0,-68 c 0,-1.140301 0.859699,-2 2,-2 z"
+         inkscape:connector-curvature="0"
+         id="path3709"
+         style="opacity:0.16000001;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <path
+         d="m 14,10 c -2.216,0 -4,1.784 -4,4 l 0,68 c 0,2.216 1.784,4 4,4 l 68,0 c 2.216,0 4,-1.784 4,-4 l 0,-68 c 0,-2.216 -1.784,-4 -4,-4 l -68,0 z m 0,1 68,0 c 1.673848,0 3,1.326152 3,3 l 0,68 c 0,1.673848 -1.326152,3 -3,3 l -68,0 c -1.673848,0 -3,-1.326152 -3,-3 l 0,-68 c 0,-1.673848 1.326152,-3 3,-3 z"
+         inkscape:connector-curvature="0"
+         id="path3707"
+         style="opacity:0.36000001;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    </g>
+    <g
+       id="g4286"
+       transform="translate(89.644021,152.38629)"
+       inkscape:export-xdpi="186"
+       inkscape:export-ydpi="186">
+      <g
+         inkscape:export-ydpi="186.99001"
+         inkscape:export-xdpi="186.99001"
+         inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+         transform="translate(81.83756,-67.387069)"
+         id="g3104">
+        <circle
+           style="fill:#4b75ff;fill-opacity:0.69803922;stroke:none"
+           id="path3041-94"
+           transform="translate(-38.385802,-266.68024)"
+           inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/blockstore.png"
+           inkscape:export-xdpi="114.95"
+           inkscape:export-ydpi="114.95"
+           cx="157.5838"
+           cy="723.05243"
+           r="36.36549" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+           x="92.655029"
+           y="463.82825"
+           id="text3052"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3054"
+             x="92.655029"
+             y="463.82825"
+             style="font-size:20px;fill:#ffffff">Node</tspan></text>
+      </g>
+      <g
+         inkscape:export-ydpi="186.99001"
+         inkscape:export-xdpi="186.99001"
+         inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+         transform="translate(110.75442,54.275198)"
+         id="g4126">
+        <path
+           inkscape:connector-curvature="0"
+           style="display:block;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+           id="path3703-3-9-0"
+           d="m 84.184007,344.61307 c -0.400063,0 -0.730641,0.33963 -0.730641,0.74652 l 0,1.42951 c -0.71533,0.19059 -1.391815,0.47811 -2.017195,0.84182 l -1.032428,-1.01654 c -0.287714,-0.28771 -0.733656,-0.29876 -1.016541,-0.0159 l -1.985431,1.98543 c -0.282908,0.28288 -0.271831,0.72882 0.01585,1.01654 l 1.016541,1.03242 c -0.363712,0.62538 -0.651225,1.30187 -0.841822,2.0172 l -1.429508,0 c -0.406897,0 -0.746524,0.33058 -0.746524,0.73064 l 0,2.79549 c 0,0.40005 0.339627,0.73064 0.746524,0.73064 l 1.429508,0 c 0.190597,0.71533 0.47811,1.39182 0.841822,2.01719 l -1.016541,1.03243 c -0.28769,0.28772 -0.298763,0.73366 -0.01585,1.01654 l 1.985431,1.98543 c 0.141442,0.14144 0.337986,0.20811 0.524157,0.20649 0.186166,-0.002 0.348525,-0.0785 0.492384,-0.22237 l 1.032428,-1.01655 c 0.62538,0.36372 1.301865,0.65124 2.017195,0.84183 l 0,1.42951 c 0,0.40689 0.330578,0.74652 0.730641,0.74652 l 2.795488,0 c 0.400055,0 0.730637,-0.33963 0.730637,-0.74652 l 0,-1.42951 c 0.71533,-0.19059 1.391815,-0.47811 2.0172,-0.84183 l 1.032423,1.01655 c 0.287714,0.28771 0.733656,0.29876 1.016541,0.0159 l 1.985431,-1.98543 c 0.282908,-0.28288 0.271831,-0.72882 -0.01585,-1.01654 l -1.016541,-1.03242 c 0.363712,-0.62538 0.651234,-1.30187 0.841822,-2.0172 l 1.429513,0 c 0.406888,0 0.746519,-0.33058 0.746519,-0.73064 l 0,-2.79549 c 0,-0.40006 -0.339631,-0.73064 -0.746519,-0.73064 l -1.429513,0 c -0.190588,-0.71533 -0.47811,-1.39181 -0.841822,-2.0172 l 1.016541,-1.03242 c 0.28769,-0.28772 0.298767,-0.73365 0.01585,-1.01654 l -1.985431,-1.98543 c -0.282885,-0.28288 -0.728827,-0.27184 -1.016541,0.0159 l -1.032423,1.01654 c -0.625385,-0.36372 -1.30187,-0.65123 -2.0172,-0.84183 l 0,-1.42951 c 0,-0.40689 -0.330582,-0.74652 -0.730637,-0.74652 l -2.795488,0 z m 1.39774,7.0999 c 1.696443,0 3.06551,1.36907 3.06551,3.06551 0,1.69643 -1.369067,3.0655 -3.06551,3.0655 -1.696434,0 -3.065506,-1.36907 -3.065506,-3.0655 0,-1.69644 1.369072,-3.06551 3.065506,-3.06551 z"
+           inkscape:export-xdpi="507.98001"
+           inkscape:export-ydpi="507.98001"
+           sodipodi:nodetypes="csccccccccssssccccsccccssssccccccccssssccccscccssccsssss" />
+        <path
+           inkscape:connector-curvature="0"
+           style="display:block;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+           id="path3703-3-9-0-7"
+           d="m 100.28931,354.90215 c -0.14736,0.0217 -0.27611,0.13084 -0.317667,0.28591 l -0.190602,0.73063 c -0.389434,-4.5e-4 -0.77631,0.0433 -1.143608,0.14295 l -0.381203,-0.65122 c -0.107024,-0.18537 -0.32601,-0.24818 -0.508271,-0.14295 L 96.4614,356.014 c -0.182269,0.10522 -0.234091,0.32289 -0.127067,0.50827 l 0.36532,0.6671 c -0.269962,0.26825 -0.504625,0.56782 -0.698872,0.90535 l -0.730636,-0.1906 c -0.206763,-0.0554 -0.422035,0.0667 -0.476506,0.27002 l -0.381203,1.42951 c -0.05447,0.20329 0.07914,0.40522 0.285904,0.46062 l 0.730637,0.1906 c -4.57e-4,0.38944 0.04326,0.77631 0.14295,1.14361 l -0.651221,0.38121 c -0.185362,0.10702 -0.248178,0.34189 -0.142949,0.52415 l 0.730636,1.28656 c 0.05261,0.0911 0.14343,0.1502 0.238253,0.17472 0.09481,0.0245 0.193214,0.006 0.2859,-0.0477 l 0.651225,-0.38121 c 0.268255,0.26997 0.583704,0.50463 0.921238,0.69887 l -0.190601,0.73065 c -0.0554,0.20675 0.06673,0.42203 0.270017,0.4765 l 1.413627,0.3812 c 0.203286,0.0545 0.421103,-0.0633 0.476506,-0.27002 l 0.190601,-0.73064 c 0.389431,4.6e-4 0.776311,-0.0591 1.143611,-0.15883 l 0.3812,0.6671 c 0.10702,0.18537 0.32601,0.24818 0.50827,0.14296 l 1.28656,-0.74653 c 0.18227,-0.10522 0.24998,-0.33877 0.14295,-0.52415 l -0.3812,-0.65123 c 0.26996,-0.26825 0.50464,-0.58369 0.69887,-0.92123 l 0.73064,0.20648 c 0.20676,0.0554 0.42203,-0.0667 0.4765,-0.27002 l 0.3812,-1.42951 c 0.0545,-0.20328 -0.0791,-0.40522 -0.2859,-0.46062 l -0.71475,-0.20648 c 4.5e-4,-0.38944 -0.0592,-0.77631 -0.15884,-1.14361 l 0.65122,-0.3812 c 0.18537,-0.10703 0.26407,-0.32601 0.15884,-0.50828 l -0.74652,-1.28655 c -0.10523,-0.18226 -0.33878,-0.2341 -0.52416,-0.12707 l -0.65122,0.3812 c -0.26826,-0.26996 -0.5837,-0.52051 -0.92124,-0.71475 l 0.1906,-0.71476 c 0.0554,-0.20676 -0.0508,-0.42203 -0.25413,-0.4765 l -1.42951,-0.38121 c -0.0508,-0.0136 -0.10972,-0.0231 -0.15884,-0.0159 z m -0.412966,3.7485 c 0.107203,0.006 0.209916,0.0347 0.317666,0.0635 0.86202,0.23098 1.37459,1.10752 1.14361,1.96955 -0.23098,0.86202 -1.12341,1.37458 -1.985433,1.14361 -0.862021,-0.23098 -1.374585,-1.10753 -1.143604,-1.96955 0.202108,-0.75427 0.917323,-1.25207 1.667761,-1.20714 z"
+           inkscape:export-xdpi="507.98001"
+           inkscape:export-ydpi="507.98001"
+           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccsssc" />
+      </g>
+    </g>
+    <g
+       id="g4295"
+       transform="translate(25.630654,265.24839)"
+       inkscape:export-xdpi="186"
+       inkscape:export-ydpi="186">
+      <g
+         inkscape:export-ydpi="186.99001"
+         inkscape:export-xdpi="186.99001"
+         inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+         transform="translate(37.796949,43.729731)"
+         id="g3109">
+        <circle
+           style="fill:#4b75ff;fill-opacity:0.69803922;stroke:none"
+           id="path3041"
+           transform="translate(99.836891,-377.79704)"
+           inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/blockstore.png"
+           inkscape:export-xdpi="114.95"
+           inkscape:export-ydpi="114.95"
+           cx="157.5838"
+           cy="723.05243"
+           r="36.36549" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+           x="230.87772"
+           y="352.71146"
+           id="text3052-9"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3054-3"
+             x="230.87772"
+             y="352.71146"
+             style="font-size:20px;fill:#ffffff">Node</tspan></text>
+      </g>
+      <g
+         inkscape:export-ydpi="186.99001"
+         inkscape:export-xdpi="186.99001"
+         inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+         transform="translate(204.9365,54.275198)"
+         id="g4126-2">
+        <path
+           inkscape:connector-curvature="0"
+           style="display:block;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+           id="path3703-3-9-0-61"
+           d="m 84.184007,344.61307 c -0.400063,0 -0.730641,0.33963 -0.730641,0.74652 l 0,1.42951 c -0.71533,0.19059 -1.391815,0.47811 -2.017195,0.84182 l -1.032428,-1.01654 c -0.287714,-0.28771 -0.733656,-0.29876 -1.016541,-0.0159 l -1.985431,1.98543 c -0.282908,0.28288 -0.271831,0.72882 0.01585,1.01654 l 1.016541,1.03242 c -0.363712,0.62538 -0.651225,1.30187 -0.841822,2.0172 l -1.429508,0 c -0.406897,0 -0.746524,0.33058 -0.746524,0.73064 l 0,2.79549 c 0,0.40005 0.339627,0.73064 0.746524,0.73064 l 1.429508,0 c 0.190597,0.71533 0.47811,1.39182 0.841822,2.01719 l -1.016541,1.03243 c -0.28769,0.28772 -0.298763,0.73366 -0.01585,1.01654 l 1.985431,1.98543 c 0.141442,0.14144 0.337986,0.20811 0.524157,0.20649 0.186166,-0.002 0.348525,-0.0785 0.492384,-0.22237 l 1.032428,-1.01655 c 0.62538,0.36372 1.301865,0.65124 2.017195,0.84183 l 0,1.42951 c 0,0.40689 0.330578,0.74652 0.730641,0.74652 l 2.795488,0 c 0.400055,0 0.730637,-0.33963 0.730637,-0.74652 l 0,-1.42951 c 0.71533,-0.19059 1.391815,-0.47811 2.0172,-0.84183 l 1.032423,1.01655 c 0.287714,0.28771 0.733656,0.29876 1.016541,0.0159 l 1.985431,-1.98543 c 0.282908,-0.28288 0.271831,-0.72882 -0.01585,-1.01654 l -1.016541,-1.03242 c 0.363712,-0.62538 0.651234,-1.30187 0.841822,-2.0172 l 1.429513,0 c 0.406888,0 0.746519,-0.33058 0.746519,-0.73064 l 0,-2.79549 c 0,-0.40006 -0.339631,-0.73064 -0.746519,-0.73064 l -1.429513,0 c -0.190588,-0.71533 -0.47811,-1.39181 -0.841822,-2.0172 l 1.016541,-1.03242 c 0.28769,-0.28772 0.298767,-0.73365 0.01585,-1.01654 l -1.985431,-1.98543 c -0.282885,-0.28288 -0.728827,-0.27184 -1.016541,0.0159 l -1.032423,1.01654 c -0.625385,-0.36372 -1.30187,-0.65123 -2.0172,-0.84183 l 0,-1.42951 c 0,-0.40689 -0.330582,-0.74652 -0.730637,-0.74652 l -2.795488,0 z m 1.39774,7.0999 c 1.696443,0 3.06551,1.36907 3.06551,3.06551 0,1.69643 -1.369067,3.0655 -3.06551,3.0655 -1.696434,0 -3.065506,-1.36907 -3.065506,-3.0655 0,-1.69644 1.369072,-3.06551 3.065506,-3.06551 z"
+           inkscape:export-xdpi="507.98001"
+           inkscape:export-ydpi="507.98001"
+           sodipodi:nodetypes="csccccccccssssccccsccccssssccccccccssssccccscccssccsssss" />
+        <path
+           inkscape:connector-curvature="0"
+           style="display:block;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+           id="path3703-3-9-0-7-2"
+           d="m 100.28931,354.90215 c -0.14736,0.0217 -0.27611,0.13084 -0.317667,0.28591 l -0.190602,0.73063 c -0.389434,-4.5e-4 -0.77631,0.0433 -1.143608,0.14295 l -0.381203,-0.65122 c -0.107024,-0.18537 -0.32601,-0.24818 -0.508271,-0.14295 L 96.4614,356.014 c -0.182269,0.10522 -0.234091,0.32289 -0.127067,0.50827 l 0.36532,0.6671 c -0.269962,0.26825 -0.504625,0.56782 -0.698872,0.90535 l -0.730636,-0.1906 c -0.206763,-0.0554 -0.422035,0.0667 -0.476506,0.27002 l -0.381203,1.42951 c -0.05447,0.20329 0.07914,0.40522 0.285904,0.46062 l 0.730637,0.1906 c -4.57e-4,0.38944 0.04326,0.77631 0.14295,1.14361 l -0.651221,0.38121 c -0.185362,0.10702 -0.248178,0.34189 -0.142949,0.52415 l 0.730636,1.28656 c 0.05261,0.0911 0.14343,0.1502 0.238253,0.17472 0.09481,0.0245 0.193214,0.006 0.2859,-0.0477 l 0.651225,-0.38121 c 0.268255,0.26997 0.583704,0.50463 0.921238,0.69887 l -0.190601,0.73065 c -0.0554,0.20675 0.06673,0.42203 0.270017,0.4765 l 1.413627,0.3812 c 0.203286,0.0545 0.421103,-0.0633 0.476506,-0.27002 l 0.190601,-0.73064 c 0.389431,4.6e-4 0.776311,-0.0591 1.143611,-0.15883 l 0.3812,0.6671 c 0.10702,0.18537 0.32601,0.24818 0.50827,0.14296 l 1.28656,-0.74653 c 0.18227,-0.10522 0.24998,-0.33877 0.14295,-0.52415 l -0.3812,-0.65123 c 0.26996,-0.26825 0.50464,-0.58369 0.69887,-0.92123 l 0.73064,0.20648 c 0.20676,0.0554 0.42203,-0.0667 0.4765,-0.27002 l 0.3812,-1.42951 c 0.0545,-0.20328 -0.0791,-0.40522 -0.2859,-0.46062 l -0.71475,-0.20648 c 4.5e-4,-0.38944 -0.0592,-0.77631 -0.15884,-1.14361 l 0.65122,-0.3812 c 0.18537,-0.10703 0.26407,-0.32601 0.15884,-0.50828 l -0.74652,-1.28655 c -0.10523,-0.18226 -0.33878,-0.2341 -0.52416,-0.12707 l -0.65122,0.3812 c -0.26826,-0.26996 -0.5837,-0.52051 -0.92124,-0.71475 l 0.1906,-0.71476 c 0.0554,-0.20676 -0.0508,-0.42203 -0.25413,-0.4765 l -1.42951,-0.38121 c -0.0508,-0.0136 -0.10972,-0.0231 -0.15884,-0.0159 z m -0.412966,3.7485 c 0.107203,0.006 0.209916,0.0347 0.317666,0.0635 0.86202,0.23098 1.37459,1.10752 1.14361,1.96955 -0.23098,0.86202 -1.12341,1.37458 -1.985433,1.14361 -0.862021,-0.23098 -1.374585,-1.10753 -1.143604,-1.96955 0.202108,-0.75427 0.917323,-1.25207 1.667761,-1.20714 z"
+           inkscape:export-xdpi="507.98001"
+           inkscape:export-ydpi="507.98001"
+           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccsssc" />
+      </g>
+    </g>
+    <g
+       id="g4338"
+       inkscape:export-xdpi="186"
+       inkscape:export-ydpi="186"
+       transform="translate(0,20)">
+      <g
+         inkscape:export-ydpi="186.99001"
+         inkscape:export-xdpi="186.99001"
+         inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+         transform="translate(-57.380122,166.22654)"
+         id="g3114">
+        <circle
+           style="fill:#4b75ff;fill-opacity:0.69803922;stroke:none"
+           id="path3041-5"
+           transform="translate(299.84477,-428.97596)"
+           inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/blockstore.png"
+           inkscape:export-xdpi="114.95"
+           inkscape:export-ydpi="114.95"
+           cx="157.5838"
+           cy="723.05243"
+           r="36.36549" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+           x="430.88559"
+           y="301.53253"
+           id="text3052-6"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3054-5"
+             x="430.88559"
+             y="301.53253"
+             style="font-size:20px;fill:#ffffff">Node</tspan></text>
+      </g>
+      <g
+         inkscape:export-ydpi="186.99001"
+         inkscape:export-xdpi="186.99001"
+         inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+         transform="translate(309.76731,125.59309)"
+         id="g4126-9">
+        <path
+           inkscape:connector-curvature="0"
+           style="display:block;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+           id="path3703-3-9-0-1"
+           d="m 84.184007,344.61307 c -0.400063,0 -0.730641,0.33963 -0.730641,0.74652 l 0,1.42951 c -0.71533,0.19059 -1.391815,0.47811 -2.017195,0.84182 l -1.032428,-1.01654 c -0.287714,-0.28771 -0.733656,-0.29876 -1.016541,-0.0159 l -1.985431,1.98543 c -0.282908,0.28288 -0.271831,0.72882 0.01585,1.01654 l 1.016541,1.03242 c -0.363712,0.62538 -0.651225,1.30187 -0.841822,2.0172 l -1.429508,0 c -0.406897,0 -0.746524,0.33058 -0.746524,0.73064 l 0,2.79549 c 0,0.40005 0.339627,0.73064 0.746524,0.73064 l 1.429508,0 c 0.190597,0.71533 0.47811,1.39182 0.841822,2.01719 l -1.016541,1.03243 c -0.28769,0.28772 -0.298763,0.73366 -0.01585,1.01654 l 1.985431,1.98543 c 0.141442,0.14144 0.337986,0.20811 0.524157,0.20649 0.186166,-0.002 0.348525,-0.0785 0.492384,-0.22237 l 1.032428,-1.01655 c 0.62538,0.36372 1.301865,0.65124 2.017195,0.84183 l 0,1.42951 c 0,0.40689 0.330578,0.74652 0.730641,0.74652 l 2.795488,0 c 0.400055,0 0.730637,-0.33963 0.730637,-0.74652 l 0,-1.42951 c 0.71533,-0.19059 1.391815,-0.47811 2.0172,-0.84183 l 1.032423,1.01655 c 0.287714,0.28771 0.733656,0.29876 1.016541,0.0159 l 1.985431,-1.98543 c 0.282908,-0.28288 0.271831,-0.72882 -0.01585,-1.01654 l -1.016541,-1.03242 c 0.363712,-0.62538 0.651234,-1.30187 0.841822,-2.0172 l 1.429513,0 c 0.406888,0 0.746519,-0.33058 0.746519,-0.73064 l 0,-2.79549 c 0,-0.40006 -0.339631,-0.73064 -0.746519,-0.73064 l -1.429513,0 c -0.190588,-0.71533 -0.47811,-1.39181 -0.841822,-2.0172 l 1.016541,-1.03242 c 0.28769,-0.28772 0.298767,-0.73365 0.01585,-1.01654 l -1.985431,-1.98543 c -0.282885,-0.28288 -0.728827,-0.27184 -1.016541,0.0159 l -1.032423,1.01654 c -0.625385,-0.36372 -1.30187,-0.65123 -2.0172,-0.84183 l 0,-1.42951 c 0,-0.40689 -0.330582,-0.74652 -0.730637,-0.74652 l -2.795488,0 z m 1.39774,7.0999 c 1.696443,0 3.06551,1.36907 3.06551,3.06551 0,1.69643 -1.369067,3.0655 -3.06551,3.0655 -1.696434,0 -3.065506,-1.36907 -3.065506,-3.0655 0,-1.69644 1.369072,-3.06551 3.065506,-3.06551 z"
+           inkscape:export-xdpi="507.98001"
+           inkscape:export-ydpi="507.98001"
+           sodipodi:nodetypes="csccccccccssssccccsccccssssccccccccssssccccscccssccsssss" />
+        <path
+           inkscape:connector-curvature="0"
+           style="display:block;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+           id="path3703-3-9-0-7-7"
+           d="m 100.28931,354.90215 c -0.14736,0.0217 -0.27611,0.13084 -0.317667,0.28591 l -0.190602,0.73063 c -0.389434,-4.5e-4 -0.77631,0.0433 -1.143608,0.14295 l -0.381203,-0.65122 c -0.107024,-0.18537 -0.32601,-0.24818 -0.508271,-0.14295 L 96.4614,356.014 c -0.182269,0.10522 -0.234091,0.32289 -0.127067,0.50827 l 0.36532,0.6671 c -0.269962,0.26825 -0.504625,0.56782 -0.698872,0.90535 l -0.730636,-0.1906 c -0.206763,-0.0554 -0.422035,0.0667 -0.476506,0.27002 l -0.381203,1.42951 c -0.05447,0.20329 0.07914,0.40522 0.285904,0.46062 l 0.730637,0.1906 c -4.57e-4,0.38944 0.04326,0.77631 0.14295,1.14361 l -0.651221,0.38121 c -0.185362,0.10702 -0.248178,0.34189 -0.142949,0.52415 l 0.730636,1.28656 c 0.05261,0.0911 0.14343,0.1502 0.238253,0.17472 0.09481,0.0245 0.193214,0.006 0.2859,-0.0477 l 0.651225,-0.38121 c 0.268255,0.26997 0.583704,0.50463 0.921238,0.69887 l -0.190601,0.73065 c -0.0554,0.20675 0.06673,0.42203 0.270017,0.4765 l 1.413627,0.3812 c 0.203286,0.0545 0.421103,-0.0633 0.476506,-0.27002 l 0.190601,-0.73064 c 0.389431,4.6e-4 0.776311,-0.0591 1.143611,-0.15883 l 0.3812,0.6671 c 0.10702,0.18537 0.32601,0.24818 0.50827,0.14296 l 1.28656,-0.74653 c 0.18227,-0.10522 0.24998,-0.33877 0.14295,-0.52415 l -0.3812,-0.65123 c 0.26996,-0.26825 0.50464,-0.58369 0.69887,-0.92123 l 0.73064,0.20648 c 0.20676,0.0554 0.42203,-0.0667 0.4765,-0.27002 l 0.3812,-1.42951 c 0.0545,-0.20328 -0.0791,-0.40522 -0.2859,-0.46062 l -0.71475,-0.20648 c 4.5e-4,-0.38944 -0.0592,-0.77631 -0.15884,-1.14361 l 0.65122,-0.3812 c 0.18537,-0.10703 0.26407,-0.32601 0.15884,-0.50828 l -0.74652,-1.28655 c -0.10523,-0.18226 -0.33878,-0.2341 -0.52416,-0.12707 l -0.65122,0.3812 c -0.26826,-0.26996 -0.5837,-0.52051 -0.92124,-0.71475 l 0.1906,-0.71476 c 0.0554,-0.20676 -0.0508,-0.42203 -0.25413,-0.4765 l -1.42951,-0.38121 c -0.0508,-0.0136 -0.10972,-0.0231 -0.15884,-0.0159 z m -0.412966,3.7485 c 0.107203,0.006 0.209916,0.0347 0.317666,0.0635 0.86202,0.23098 1.37459,1.10752 1.14361,1.96955 -0.23098,0.86202 -1.12341,1.37458 -1.985433,1.14361 -0.862021,-0.23098 -1.374585,-1.10753 -1.143604,-1.96955 0.202108,-0.75427 0.917323,-1.25207 1.667761,-1.20714 z"
+           inkscape:export-xdpi="507.98001"
+           inkscape:export-ydpi="507.98001"
+           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccsssc" />
+      </g>
+    </g>
+    <g
+       id="g4304"
+       transform="translate(-31.148141,263.24839)"
+       inkscape:export-xdpi="186"
+       inkscape:export-ydpi="186">
+      <g
+         inkscape:export-ydpi="186.99001"
+         inkscape:export-xdpi="186.99001"
+         inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+         transform="translate(-116.91373,37.668801)"
+         id="g3119">
+        <circle
+           style="fill:#4b75ff;fill-opacity:0.69803922;stroke:none"
+           id="path3041-9"
+           transform="translate(467.70062,-371.73611)"
+           inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/blockstore.png"
+           inkscape:export-xdpi="114.95"
+           inkscape:export-ydpi="114.95"
+           cx="157.5838"
+           cy="723.05243"
+           r="36.36549" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+           x="598.74146"
+           y="358.77237"
+           id="text3052-3"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3054-8"
+             x="598.74146"
+             y="358.77237"
+             style="font-size:20px;fill:#ffffff">Node</tspan></text>
+      </g>
+      <g
+         inkscape:export-ydpi="186.99001"
+         inkscape:export-xdpi="186.99001"
+         inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+         transform="translate(418.08955,54.275198)"
+         id="g4126-3">
+        <path
+           inkscape:connector-curvature="0"
+           style="display:block;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+           id="path3703-3-9-0-2"
+           d="m 84.184007,344.61307 c -0.400063,0 -0.730641,0.33963 -0.730641,0.74652 l 0,1.42951 c -0.71533,0.19059 -1.391815,0.47811 -2.017195,0.84182 l -1.032428,-1.01654 c -0.287714,-0.28771 -0.733656,-0.29876 -1.016541,-0.0159 l -1.985431,1.98543 c -0.282908,0.28288 -0.271831,0.72882 0.01585,1.01654 l 1.016541,1.03242 c -0.363712,0.62538 -0.651225,1.30187 -0.841822,2.0172 l -1.429508,0 c -0.406897,0 -0.746524,0.33058 -0.746524,0.73064 l 0,2.79549 c 0,0.40005 0.339627,0.73064 0.746524,0.73064 l 1.429508,0 c 0.190597,0.71533 0.47811,1.39182 0.841822,2.01719 l -1.016541,1.03243 c -0.28769,0.28772 -0.298763,0.73366 -0.01585,1.01654 l 1.985431,1.98543 c 0.141442,0.14144 0.337986,0.20811 0.524157,0.20649 0.186166,-0.002 0.348525,-0.0785 0.492384,-0.22237 l 1.032428,-1.01655 c 0.62538,0.36372 1.301865,0.65124 2.017195,0.84183 l 0,1.42951 c 0,0.40689 0.330578,0.74652 0.730641,0.74652 l 2.795488,0 c 0.400055,0 0.730637,-0.33963 0.730637,-0.74652 l 0,-1.42951 c 0.71533,-0.19059 1.391815,-0.47811 2.0172,-0.84183 l 1.032423,1.01655 c 0.287714,0.28771 0.733656,0.29876 1.016541,0.0159 l 1.985431,-1.98543 c 0.282908,-0.28288 0.271831,-0.72882 -0.01585,-1.01654 l -1.016541,-1.03242 c 0.363712,-0.62538 0.651234,-1.30187 0.841822,-2.0172 l 1.429513,0 c 0.406888,0 0.746519,-0.33058 0.746519,-0.73064 l 0,-2.79549 c 0,-0.40006 -0.339631,-0.73064 -0.746519,-0.73064 l -1.429513,0 c -0.190588,-0.71533 -0.47811,-1.39181 -0.841822,-2.0172 l 1.016541,-1.03242 c 0.28769,-0.28772 0.298767,-0.73365 0.01585,-1.01654 l -1.985431,-1.98543 c -0.282885,-0.28288 -0.728827,-0.27184 -1.016541,0.0159 l -1.032423,1.01654 c -0.625385,-0.36372 -1.30187,-0.65123 -2.0172,-0.84183 l 0,-1.42951 c 0,-0.40689 -0.330582,-0.74652 -0.730637,-0.74652 l -2.795488,0 z m 1.39774,7.0999 c 1.696443,0 3.06551,1.36907 3.06551,3.06551 0,1.69643 -1.369067,3.0655 -3.06551,3.0655 -1.696434,0 -3.065506,-1.36907 -3.065506,-3.0655 0,-1.69644 1.369072,-3.06551 3.065506,-3.06551 z"
+           inkscape:export-xdpi="507.98001"
+           inkscape:export-ydpi="507.98001"
+           sodipodi:nodetypes="csccccccccssssccccsccccssssccccccccssssccccscccssccsssss" />
+        <path
+           inkscape:connector-curvature="0"
+           style="display:block;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+           id="path3703-3-9-0-7-8"
+           d="m 100.28931,354.90215 c -0.14736,0.0217 -0.27611,0.13084 -0.317667,0.28591 l -0.190602,0.73063 c -0.389434,-4.5e-4 -0.77631,0.0433 -1.143608,0.14295 l -0.381203,-0.65122 c -0.107024,-0.18537 -0.32601,-0.24818 -0.508271,-0.14295 L 96.4614,356.014 c -0.182269,0.10522 -0.234091,0.32289 -0.127067,0.50827 l 0.36532,0.6671 c -0.269962,0.26825 -0.504625,0.56782 -0.698872,0.90535 l -0.730636,-0.1906 c -0.206763,-0.0554 -0.422035,0.0667 -0.476506,0.27002 l -0.381203,1.42951 c -0.05447,0.20329 0.07914,0.40522 0.285904,0.46062 l 0.730637,0.1906 c -4.57e-4,0.38944 0.04326,0.77631 0.14295,1.14361 l -0.651221,0.38121 c -0.185362,0.10702 -0.248178,0.34189 -0.142949,0.52415 l 0.730636,1.28656 c 0.05261,0.0911 0.14343,0.1502 0.238253,0.17472 0.09481,0.0245 0.193214,0.006 0.2859,-0.0477 l 0.651225,-0.38121 c 0.268255,0.26997 0.583704,0.50463 0.921238,0.69887 l -0.190601,0.73065 c -0.0554,0.20675 0.06673,0.42203 0.270017,0.4765 l 1.413627,0.3812 c 0.203286,0.0545 0.421103,-0.0633 0.476506,-0.27002 l 0.190601,-0.73064 c 0.389431,4.6e-4 0.776311,-0.0591 1.143611,-0.15883 l 0.3812,0.6671 c 0.10702,0.18537 0.32601,0.24818 0.50827,0.14296 l 1.28656,-0.74653 c 0.18227,-0.10522 0.24998,-0.33877 0.14295,-0.52415 l -0.3812,-0.65123 c 0.26996,-0.26825 0.50464,-0.58369 0.69887,-0.92123 l 0.73064,0.20648 c 0.20676,0.0554 0.42203,-0.0667 0.4765,-0.27002 l 0.3812,-1.42951 c 0.0545,-0.20328 -0.0791,-0.40522 -0.2859,-0.46062 l -0.71475,-0.20648 c 4.5e-4,-0.38944 -0.0592,-0.77631 -0.15884,-1.14361 l 0.65122,-0.3812 c 0.18537,-0.10703 0.26407,-0.32601 0.15884,-0.50828 l -0.74652,-1.28655 c -0.10523,-0.18226 -0.33878,-0.2341 -0.52416,-0.12707 l -0.65122,0.3812 c -0.26826,-0.26996 -0.5837,-0.52051 -0.92124,-0.71475 l 0.1906,-0.71476 c 0.0554,-0.20676 -0.0508,-0.42203 -0.25413,-0.4765 l -1.42951,-0.38121 c -0.0508,-0.0136 -0.10972,-0.0231 -0.15884,-0.0159 z m -0.412966,3.7485 c 0.107203,0.006 0.209916,0.0347 0.317666,0.0635 0.86202,0.23098 1.37459,1.10752 1.14361,1.96955 -0.23098,0.86202 -1.12341,1.37458 -1.985433,1.14361 -0.862021,-0.23098 -1.374585,-1.10753 -1.143604,-1.96955 0.202108,-0.75427 0.917323,-1.25207 1.667761,-1.20714 z"
+           inkscape:export-xdpi="507.98001"
+           inkscape:export-ydpi="507.98001"
+           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccsssc" />
+      </g>
+    </g>
+    <g
+       id="g4277"
+       transform="translate(-99.204723,154.38629)"
+       inkscape:export-xdpi="186"
+       inkscape:export-ydpi="186">
+      <g
+         inkscape:export-ydpi="186.99001"
+         inkscape:export-xdpi="186.99001"
+         inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+         transform="translate(-84.365491,-96.681489)"
+         id="g3124">
+        <circle
+           style="fill:#4b75ff;fill-opacity:0.69803922;stroke:none"
+           id="path3041-8"
+           transform="translate(536.39099,-237.38582)"
+           inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/blockstore.png"
+           inkscape:export-xdpi="114.95"
+           inkscape:export-ydpi="114.95"
+           cx="157.5838"
+           cy="723.05243"
+           r="36.36549" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:16px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+           x="667.43182"
+           y="493.12265"
+           id="text3052-2"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3054-7"
+             x="667.43182"
+             y="493.12265"
+             style="font-size:20px;fill:#ffffff">Node</tspan></text>
+      </g>
+      <g
+         inkscape:export-ydpi="186.99001"
+         inkscape:export-xdpi="186.99001"
+         inkscape:export-filename="/home/dakk/Repositories/MyRepos/Tesi/bitcoin-for-moms-bart/presentation/media/cvm-consensus.png"
+         transform="translate(519.32816,54.275198)"
+         id="g4126-0">
+        <path
+           inkscape:connector-curvature="0"
+           style="display:block;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+           id="path3703-3-9-0-28"
+           d="m 84.184007,344.61307 c -0.400063,0 -0.730641,0.33963 -0.730641,0.74652 l 0,1.42951 c -0.71533,0.19059 -1.391815,0.47811 -2.017195,0.84182 l -1.032428,-1.01654 c -0.287714,-0.28771 -0.733656,-0.29876 -1.016541,-0.0159 l -1.985431,1.98543 c -0.282908,0.28288 -0.271831,0.72882 0.01585,1.01654 l 1.016541,1.03242 c -0.363712,0.62538 -0.651225,1.30187 -0.841822,2.0172 l -1.429508,0 c -0.406897,0 -0.746524,0.33058 -0.746524,0.73064 l 0,2.79549 c 0,0.40005 0.339627,0.73064 0.746524,0.73064 l 1.429508,0 c 0.190597,0.71533 0.47811,1.39182 0.841822,2.01719 l -1.016541,1.03243 c -0.28769,0.28772 -0.298763,0.73366 -0.01585,1.01654 l 1.985431,1.98543 c 0.141442,0.14144 0.337986,0.20811 0.524157,0.20649 0.186166,-0.002 0.348525,-0.0785 0.492384,-0.22237 l 1.032428,-1.01655 c 0.62538,0.36372 1.301865,0.65124 2.017195,0.84183 l 0,1.42951 c 0,0.40689 0.330578,0.74652 0.730641,0.74652 l 2.795488,0 c 0.400055,0 0.730637,-0.33963 0.730637,-0.74652 l 0,-1.42951 c 0.71533,-0.19059 1.391815,-0.47811 2.0172,-0.84183 l 1.032423,1.01655 c 0.287714,0.28771 0.733656,0.29876 1.016541,0.0159 l 1.985431,-1.98543 c 0.282908,-0.28288 0.271831,-0.72882 -0.01585,-1.01654 l -1.016541,-1.03242 c 0.363712,-0.62538 0.651234,-1.30187 0.841822,-2.0172 l 1.429513,0 c 0.406888,0 0.746519,-0.33058 0.746519,-0.73064 l 0,-2.79549 c 0,-0.40006 -0.339631,-0.73064 -0.746519,-0.73064 l -1.429513,0 c -0.190588,-0.71533 -0.47811,-1.39181 -0.841822,-2.0172 l 1.016541,-1.03242 c 0.28769,-0.28772 0.298767,-0.73365 0.01585,-1.01654 l -1.985431,-1.98543 c -0.282885,-0.28288 -0.728827,-0.27184 -1.016541,0.0159 l -1.032423,1.01654 c -0.625385,-0.36372 -1.30187,-0.65123 -2.0172,-0.84183 l 0,-1.42951 c 0,-0.40689 -0.330582,-0.74652 -0.730637,-0.74652 l -2.795488,0 z m 1.39774,7.0999 c 1.696443,0 3.06551,1.36907 3.06551,3.06551 0,1.69643 -1.369067,3.0655 -3.06551,3.0655 -1.696434,0 -3.065506,-1.36907 -3.065506,-3.0655 0,-1.69644 1.369072,-3.06551 3.065506,-3.06551 z"
+           inkscape:export-xdpi="507.98001"
+           inkscape:export-ydpi="507.98001"
+           sodipodi:nodetypes="csccccccccssssccccsccccssssccccccccssssccccscccssccsssss" />
+        <path
+           inkscape:connector-curvature="0"
+           style="display:block;overflow:visible;visibility:visible;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+           id="path3703-3-9-0-7-87"
+           d="m 100.28931,354.90215 c -0.14736,0.0217 -0.27611,0.13084 -0.317667,0.28591 l -0.190602,0.73063 c -0.389434,-4.5e-4 -0.77631,0.0433 -1.143608,0.14295 l -0.381203,-0.65122 c -0.107024,-0.18537 -0.32601,-0.24818 -0.508271,-0.14295 L 96.4614,356.014 c -0.182269,0.10522 -0.234091,0.32289 -0.127067,0.50827 l 0.36532,0.6671 c -0.269962,0.26825 -0.504625,0.56782 -0.698872,0.90535 l -0.730636,-0.1906 c -0.206763,-0.0554 -0.422035,0.0667 -0.476506,0.27002 l -0.381203,1.42951 c -0.05447,0.20329 0.07914,0.40522 0.285904,0.46062 l 0.730637,0.1906 c -4.57e-4,0.38944 0.04326,0.77631 0.14295,1.14361 l -0.651221,0.38121 c -0.185362,0.10702 -0.248178,0.34189 -0.142949,0.52415 l 0.730636,1.28656 c 0.05261,0.0911 0.14343,0.1502 0.238253,0.17472 0.09481,0.0245 0.193214,0.006 0.2859,-0.0477 l 0.651225,-0.38121 c 0.268255,0.26997 0.583704,0.50463 0.921238,0.69887 l -0.190601,0.73065 c -0.0554,0.20675 0.06673,0.42203 0.270017,0.4765 l 1.413627,0.3812 c 0.203286,0.0545 0.421103,-0.0633 0.476506,-0.27002 l 0.190601,-0.73064 c 0.389431,4.6e-4 0.776311,-0.0591 1.143611,-0.15883 l 0.3812,0.6671 c 0.10702,0.18537 0.32601,0.24818 0.50827,0.14296 l 1.28656,-0.74653 c 0.18227,-0.10522 0.24998,-0.33877 0.14295,-0.52415 l -0.3812,-0.65123 c 0.26996,-0.26825 0.50464,-0.58369 0.69887,-0.92123 l 0.73064,0.20648 c 0.20676,0.0554 0.42203,-0.0667 0.4765,-0.27002 l 0.3812,-1.42951 c 0.0545,-0.20328 -0.0791,-0.40522 -0.2859,-0.46062 l -0.71475,-0.20648 c 4.5e-4,-0.38944 -0.0592,-0.77631 -0.15884,-1.14361 l 0.65122,-0.3812 c 0.18537,-0.10703 0.26407,-0.32601 0.15884,-0.50828 l -0.74652,-1.28655 c -0.10523,-0.18226 -0.33878,-0.2341 -0.52416,-0.12707 l -0.65122,0.3812 c -0.26826,-0.26996 -0.5837,-0.52051 -0.92124,-0.71475 l 0.1906,-0.71476 c 0.0554,-0.20676 -0.0508,-0.42203 -0.25413,-0.4765 l -1.42951,-0.38121 c -0.0508,-0.0136 -0.10972,-0.0231 -0.15884,-0.0159 z m -0.412966,3.7485 c 0.107203,0.006 0.209916,0.0347 0.317666,0.0635 0.86202,0.23098 1.37459,1.10752 1.14361,1.96955 -0.23098,0.86202 -1.12341,1.37458 -1.985433,1.14361 -0.862021,-0.23098 -1.374585,-1.10753 -1.143604,-1.96955 0.202108,-0.75427 0.917323,-1.25207 1.667761,-1.20714 z"
+           inkscape:export-xdpi="507.98001"
+           inkscape:export-ydpi="507.98001"
+           sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccsssc" />
+      </g>
+    </g>
+  </g>
+</svg>
