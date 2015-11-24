@@ -1,251 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="favicon.ico">
 
-    <title>Contractvm - A general-purpose framework for decentralized applications</title>
+	<title>Contractvm - A general-purpose framework for decentralized applications</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
 
 <style>
-	.navbar {
-		font-size: 115%;
-		height: 350px;
-		background-image: url(media/gear-header.png);
-	}
+.navbar {
+	font-size: 115%;
+	height: 350px;
+	background-image: url(media/gear-header.png);
+}
 
-	.navbar-inverse .navbar-nav > li > a {
-		color: #fafafa;
-	}
+.navbar-inverse .navbar-nav > li > a {
+	color: #fafafa;
+}
 
-	.navbar-inverse .navbar-nav > li > a:hover {
-		opacity: 0.7;
-	}
+.navbar-inverse .navbar-nav > li > a:hover {
+	opacity: 0.7;
+}
 
-	.navbar-inverse .navbar-brand {
-		color: #fafafa;
-	}
+.navbar-inverse .navbar-brand {
+	color: #fafafa;
+}
 
-	.navbar-inverse .navbar-brand:hover {
-		opacity: 0.7;
-	}
+.navbar-inverse .navbar-brand:hover {
+	opacity: 0.7;
+}
 
-	.marketing {
-		background-color: #444;
-		color: #fafafa;
-	}
+.marketing {
+	background-color: #444;
+	color: #fafafa;
+}
 
-	.marketing h2 { color: #fafafa; }
-	.marketing i { color: #2196F3; }
-	.marketing i { opacity: 0.9; }
 
-	.featurette-heading { font-size: 250%; }
+.marketing h4 { color: #fafafa; }
+.marketing h3 { color: #fafafa; }
+.marketing h2 { color: #fafafa; }
+.marketing i { color: #2196F3; }
+.marketing i { opacity: 0.9; }
+
+.marketing a {
+	color: #fafafa;
+}
+
+.marketing a:hover {
+	opacity: 0.8;
+	text-decoration: none;
+}
+
+.marketing i { font-size: 900%;color: #fafafa; }
+
+.featurette-heading { font-size: 250%; }
+
+.howitworks-intro {
+	text-align: center;
+	background-color: #f1f1f1;
+	margin-top: -22px;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.footer {
+	height: 90px;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #444;
+	color: #fafafa;
+	margin-top: -25px;
+	border-top: 1px solid #888;
+}
+
+.footer a {
+	color: #fafafa;
+}
 
 </style>
 
 <!-- NAVBAR
 ================================================== -->
-  <body>
-        <nav class="navbar navbar-inverse navbar-static-top navbar-default">
-          <div class="container">
-            <div class="navbar-header hidden-xs hidden-sm">
-              <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-			</button>-->
-              <a class="navbar-brand" href="#">Contractvm</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-              	<li><a href="#howitworks">How it works</a></li>
-              	<li><a href="#features">Features</a></li>
-              	<li><a href="#getstarted">Get started</a></li>
-                <!--<li><a href="#about">About</a></li>-->
-              </ul>
-	      <ul class="nav navbar-nav navbar-right">
-		<li><a href="https://contractvm.github.io/doc" target="_blank"><i class="fa fa-book"></i> Documentation</a></li>
-		<li><a href="https://github.com/contractvm" target="_blank"><i class="fa fa-github"></i> Source code</a></li>
-	      </ul>
-            </div>
-
-
-			<div align="center">
-				<br>
-				<h1 style="color: #fafafa">contractvm</h1>
-				<h3 style="color: #fafafa">a general-purpose framework for <br>decentralized applications</h3>
-			</div>
-          </div>
-        </nav>
-
-
-
-	<div style="background-color: #f1f1f1; margin-top: -22px; padding-left: 10%; padding-right: 10%;">
-		<br>
-		<a name="howitworks"></a>
-		<br>
-		<p class="lead" style="text-align: center">
-					Contractvm is a general-purpose decentralized framework based on blockchain.
-					The framework allow to implement arbitrary decentralized applications in an easy way,
-					providing the necessary abstraction layer.
-					Contractvm dapps are executed in an open network of nodes that perform computations by processing
-					dapp interactions stored in messages. All messages are securely stored in an decentralized data structure
-					that combines an existing blockchain with a distributed hash table.
-		</p>
-		<!--<div align="right"><a class="btn btn-primary" href="https://contractvm.github.io/doc" target="_blank"><i class="fa fa-play"></i> Get started</a></div>-->
-		<br><br><br>
-	</div>
-
-	<div class="marketing">
-	<br><br>
+<body>
+	<nav class="navbar navbar-inverse navbar-static-top navbar-default">
 		<div class="container">
-	      <div class="row">
-	        <div class="col-lg-4">
-		  <div align="center">
-			<a href="#"><i class="fa fa-code" style="font-size: 900%"></i></a>
-		        <h2>Develop</h2>
-	        	<p class="lead">Write your decentralized service using the contractvm frameworks. The framework provides the necessary abstraction for decentralization.</p>
-		  </div>
-	        </div>
-	        <div class="col-lg-4">
-		  <div align="center">
-			<a href="#"><i class="fa fa-gears" style="font-size: 900%"></i></a>
-	          	<h2>Deploy</h2>
-	          	<p class="lead">Deploy your decentralized application in the contractvm network. Distribuite and promote the adoption of your application.</p>
-		  </div>
+			<div class="navbar-header hidden-xs hidden-sm">
+				<!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>-->
+			<a class="navbar-brand" href="#">Contractvm</a>
 		</div>
-	        <div class="col-lg-4">
-		  <div align="center">
-			<a href="#"><i class="fa fa-check" style="font-size: 900%"></i></a>
-	          	<h2>Use</h2>
-	          	<p class="lead">Write client applications using your decentralized service through the contractvm client library.</p>
-		  </div>
-	        </div>
-	      </div>
-	  </div>
-  </div>
-	<br>
-
-	<a name="features"></a>
-
-	<!-- Features -->
-	<br>
-	<div class="container">
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Decentralized</h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="media/cvm-decentr.png" width="256px">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Blockchain agnostic</h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-			<img class="featurette-image img-responsive center-block" src="media/coins.png" width="256px">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Client-side consensus</h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="media/cvm-consensus.png" width="256px">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Language agnostic</h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-	  <div class="col-md-5 col-md-pull-7">
-		<img class="featurette-image img-responsive center-block" src="media/prog-languages.png" width="256px">
-	  </div>
-  </div>
-
-  </div>
-<br>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="#">Home</a></li>
+				<li><a href="#howitworks">How it works</a></li>
+				<li><a href="#features">Features</a></li>
+				<li><a href="#getstarted">Get started</a></li>
+				<!--<li><a href="#about">About</a></li>-->
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="https://contractvm.github.io/doc" target="_blank"><i class="fa fa-book"></i> Documentation</a></li>
+				<li><a href="https://github.com/contractvm" target="_blank"><i class="fa fa-github"></i> Source code</a></li>
+			</ul>
+		</div>
 
 
-<a name="getstarted"></a>
-
-  <div class="marketing">
-  <br>
-	  <div class="container" align="center">
-		  <h2>Get started</h2>
-		  <p class="lead">
-			  Contractvm is still in development phase, but you can start using the contractvm framework for writing your complex
-			  decentralized applications, read documentation and tutorials or contribute to the framework development.
-		  </p>
-
-		  <div cass="row">
-			  <div class="col-md-4">
-				  <a href="https://github.com/contractvm" target="_blank">
-					  <i style="font-size: 900%; color: #fafafa" class="fa fa-github"></i>
-					  <br>
-					  <span style="font-size: 200%;color: #fafafa">Source code</span>
-				  </a>
-			  </div>
-			  <div class="col-md-4">
-				  <a href="https://contractvm.github.io/doc" target="_blank">
-					  <i style="font-size: 900%;color: #fafafa" class="fa fa-book"></i>
-					  <br>
-					  <span style="font-size: 200%;color: #fafafa">Documentation</span>
-				  </a>
-			  </div>
-			  <div class="col-md-4">
-				  <a href="http://contractvm.github.io/doc/tutorials.html" target="_blank">
-					  <i style="font-size: 900%;color: #fafafa" class="fa fa-list"></i>
-					  <br>
-					  <span style="font-size: 200%;color: #fafafa">Tutorials</span>
-				  </a>
-			  </div>
-		  </div>
-
+		<div align="center">
+			<br>
+			<h1 style="color: #fafafa">contractvm</h1>
+			<h3 style="color: #fafafa">a general-purpose framework for <br>decentralized applications</h3>
+		</div>
 	</div>
+</nav>
+
+
+
+<div class="howitworks-intro">
 	<br>
+	<a name="howitworks"></a>
+	<br>
+	<p class="lead">
+		Contractvm is a general-purpose decentralized framework based on blockchain.
+		The framework allow to implement arbitrary decentralized applications in an easy way,
+		providing the necessary abstraction layer.
+		Contractvm dapps are executed in an open network of nodes that perform computations by processing
+		dapp interactions stored in messages. All messages are securely stored in an decentralized data structure
+		that combines an existing blockchain with a distributed hash table.
+	</p>
+	<!--<div align="right"><a class="btn btn-primary" href="https://contractvm.github.io/doc" target="_blank"><i class="fa fa-play"></i> Get started</a></div>-->
+	<br><br><br>
+</div>
+
+<div class="marketing">
+	<br><br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<div align="center">
+					<a href="#"><i class="fa fa-code"></i></a>
+					<h3>Develop</h3>
+					<p class="lead">Write your decentralized service using the contractvm frameworks. The framework provides the necessary abstraction for decentralization.</p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div align="center">
+					<a href="#"><i class="fa fa-gears"></i></a>
+					<h3>Deploy</h3>
+					<p class="lead">Deploy your decentralized application in the contractvm network. Distribuite and promote the adoption of your application.</p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div align="center">
+					<a href="#"><i class="fa fa-check"></i></a>
+					<h3>Use</h3>
+					<p class="lead">Write client applications using your decentralized service through the contractvm client library.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <br>
-      <footer style="margin-right: 20px;">
-        <p class="pull-right"><a href="#">Back to top</a></p>
-      </footer>
-    </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+<a name="features"></a>
+
+<!-- Features -->
+<br>
+<div class="container">
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading">Decentralized</h2>
+			<p class="lead">
+				Dapps are executed in a network of contractvm nodes where every node process dapp interactions, updating and keeping a local
+				computation state of each dapp. A node is like an oracle, that can be queried for retrieving the state of
+				running dapps.
+			</p>
+		</div>
+		<div class="col-md-5">
+			<img class="featurette-image img-responsive center-block" src="media/cvm-decentr.png" width="256px">
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+		<div class="col-md-7 col-md-push-5">
+			<h2 class="featurette-heading">Blockchain agnostic</h2>
+			<p class="lead">
+				Dapp interactions (called messages) are stored using a data structure that combines a blockchain with a distributed hash table;
+				message data are saved inside the DHT, exploiting the blockchain only for cryptographic proof. Contractvm can use
+				any of the existing blockchains that follow the bitcoin-core protocol (bitcoin, litecoin, dogecoin and more than 500 other).
+			</p>
+		</div>
+		<div class="col-md-5 col-md-pull-7">
+			<img class="featurette-image img-responsive center-block" src="media/coins.png" width="256px">
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading">Client-side consensus</h2>
+			<p class="lead">Correctness of computations is guaranteed by a consensus mechanism: when a
+				client queries a dapp, the query is replicated and sent to a set of distinct nodes in a trasparent manner;
+				the actual result is obtained by taking the majority of the received answers. Moreover, this design choice gives to
+				nodes the ability to choose which dapps handle.
+			</p>
+		</div>
+		<div class="col-md-5">
+			<img class="featurette-image img-responsive center-block" src="media/cvm-consensus.png" width="256px">
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+		<div class="col-md-7 col-md-push-5">
+			<h2 class="featurette-heading">Language agnostic</h2>
+			<p class="lead">Contractvm does not impose any constraint on the programming language used to write dapps:
+				developers can also invoke legacy applications or external services whenever they need to.</p>
+			</div>
+			<div class="col-md-5 col-md-pull-7">
+				<img class="featurette-image img-responsive center-block" src="media/prog-languages.png" width="256px">
+			</div>
+		</div>
+
+	</div>
+	<br>
+
+
+	<a name="getstarted"></a>
+
+	<div class="marketing">
+		<br>
+		<div class="container" align="center">
+			<h2>Get started</h2>
+			<p class="lead">
+				Contractvm is still in development phase, but you can start to try the framework for writing your complex
+				decentralized applications, read documentation and tutorials or contribute to the framework development.
+			</p>
+
+			<div cass="row">
+				<div class="col-md-4">
+					<a href="https://github.com/contractvm" target="_blank">
+						<i class="fa fa-github"></i>
+						<br>
+						<h4>Source code</h4>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="https://contractvm.github.io/doc" target="_blank">
+						<i class="fa fa-book"></i>
+						<br>
+						<h4>Documentation</h4>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="http://contractvm.github.io/doc/tutorials.html" target="_blank">
+						<i class="fa fa-list"></i>
+						<br>
+						<h4>Tutorials</h4>
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<br>
+
+	</div>
+	<br>
+	<div class="footer">
+		<div class="row">
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-4">
+			</div>
+		</div>
+		<p align="center">Copyright 2015 &copy; contractvm</p>
+		<p style="float: right"><a href="#">Back to top</a></p>
+	</div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
 </html>
