@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Contractvm 0.6 documentation" href="index.html" />
     <link rel="up" title="Writing your first Dapp" href="tutorial-firstdapp.html" />
-    <link rel="next" title="Using other programming languages" href="tutorial-langs.html" />
+    <link rel="next" title="Helper classes" href="helperclasses.html" />
     <link rel="prev" title="Client library" href="tutorial-firstdapp-lib.html" /> 
   </head>
   <body role="document">
@@ -40,7 +40,7 @@
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="tutorial-langs.html">Using other programming languages</a>&#160;&#160;»
+        <a href="helperclasses.html">Helper classes</a>&#160;&#160;»
         </p>
 
       </div>
@@ -49,16 +49,21 @@
         
   <div class="section" id="example-usage">
 <h1>Example usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h1>
-<p>TODO: quick overview about how to install the created dapp</p>
+<p>Now we install our new dapp using dappman; contractvmd will automatically restart (if running):</p>
+<div class="highlight-bash"><div class="highlight"><pre>dappman -i /path/of/your/dapp/myfirstdapp
+</pre></div>
+</div>
 <p>We now exploit the created dapp for writing a client application. We first create a <strong>ConsensusManager</strong>,
 and we initialize it with a static set of nodes (at the moment we can use the our local contractvmd instance).</p>
-<p>Then we create a <strong>Wallet</strong> object, by using a local instance of
-<em>bitcoin-core</em> with private keys saved in the file <em>app.wallet</em>.</p>
+<p>Then we create a <strong>Wallet</strong> object, by using an external blockchain explorer.
+The first run of the example will create a new file <strong>test.wallet</strong> containing a key-pair.
+If you want to send messages using this address, remember to send some testnet coins to the address in test.wallet;
+you can do this by using a faucet like <a class="reference external" href="http://tpfaucet.appspot.com/">http://tpfaucet.appspot.com/</a>.</p>
 <p>Next we create a <strong>MyFirstManager</strong>, by using the <em>ConsensusManager</em> and <em>Wallet</em> objects
 created before. The script asks the user for a key-value pair, and
 it publishes it to the framework. Then, the script asks the
 user for a key, and then queries and returns the associated value (if any).</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">libcontractvm</span> <span class="kn">import</span> <span class="n">Wallet</span><span class="p">,</span> <span class="n">WalletNode</span><span class="p">,</span> <span class="n">ConsensusManager</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">libcontractvm</span> <span class="kn">import</span> <span class="n">Wallet</span><span class="p">,</span> <span class="n">WalletExplorer</span><span class="p">,</span> <span class="n">ConsensusManager</span>
 <span class="kn">from</span> <span class="nn">myfirstdapp</span> <span class="kn">import</span> <span class="n">MyFirstManager</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">config</span>
@@ -66,9 +71,7 @@ user for a key, and then queries and returns the associated value (if any).</p>
 <span class="n">consMan</span> <span class="o">=</span> <span class="n">ConsensusManager</span><span class="o">.</span><span class="n">ConsensusManager</span> <span class="p">()</span>
 <span class="n">consMan</span><span class="o">.</span><span class="n">bootstrap</span> <span class="p">(</span><span class="s">&quot;http://127.0.0.1:8181&quot;</span><span class="p">)</span>
 
-<span class="n">wallet</span><span class="o">=</span><span class="n">WalletNode</span><span class="o">.</span><span class="n">WalletNode</span> <span class="p">(</span><span class="n">chain</span><span class="o">=</span><span class="s">&#39;XLT&#39;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">WALLET_NODE_URL</span><span class="p">,</span>
-                                <span class="n">wallet_file</span><span class="o">=</span><span class="s">&#39;data/test_xltnode_a.wallet&#39;</span><span class="p">)</span>
-
+<span class="n">wallet</span> <span class="o">=</span> <span class="n">WalletExplorer</span><span class="o">.</span><span class="n">WalletExplorer</span> <span class="p">(</span><span class="n">wallet_file</span><span class="o">=</span><span class="s">&#39;test.wallet&#39;</span><span class="p">)</span>
 <span class="n">bsMan</span> <span class="o">=</span> <span class="n">MyFirstManager</span><span class="o">.</span><span class="n">MyFirstManager</span> <span class="p">(</span><span class="n">consMan</span><span class="p">,</span> <span class="n">wallet</span><span class="o">=</span><span class="n">wallet</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">set_key</span> <span class="p">():</span>
@@ -106,14 +109,14 @@ user for a key, and then queries and returns the associated value (if any).</p>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="index.html">Contents</a>
         &#160;&#160;::&#160;&#160;
-        <a href="tutorial-langs.html">Using other programming languages</a>&#160;&#160;»
+        <a href="helperclasses.html">Helper classes</a>&#160;&#160;»
         </p>
 
       </div>
 
     <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Davide Gessa.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.2.
     </div>
   </body>
 </html>
