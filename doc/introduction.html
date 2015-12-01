@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Introduction &mdash; Contractvm 0.6 documentation</title>
+    <title>Introduction &mdash; Contractvm 0.6.8 documentation</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.6',
+        VERSION:     '0.6.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,13 +23,13 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Contractvm 0.6 documentation" href="index.html" />
+    <link rel="top" title="Contractvm 0.6.8 documentation" href="index.html" />
     <link rel="next" title="Installation" href="installation.html" />
     <link rel="prev" title="Contractvm" href="index.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="index.html">
-          <span>Contractvm 0.6 documentation</span></a></h1>
+          <span>Contractvm 0.6.8 documentation</span></a></h1>
         <h2 class="heading"><span>Introduction</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
@@ -48,14 +48,33 @@
         
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Contractvm is a general-purpose decentralized framework based on blockchain. The framework is extensible through a
-plugin infrastructure that allows to implement arbitrary decentralized applications (dapps) in an easy way,
-providing the necessary abstraction layer. In contrast to existing solutions, contractvm doesn&#8217;t verify
-computation state of dapps, proposing a client-side consensus mechanism for mitigating malicious behaviours.</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul class="simple">
-</ul>
+<p>Contractvm is a general-purpose decentralized framework based on blockchain. The framework is
+extensible through a pluggable infrastructure that allows to implement arbitrary decentralized
+applications (dapps) in an easy way, providing the necessary abstraction layers.</p>
+<p>Dapps are executed in a network of contractvm nodes where every node process dapp
+interactions, updating and keeping a local computation state of each dapp.
+A node is like an oracle, that can be queried by clients for retrieving the state of running dapps.</p>
+<a class="reference internal image-reference" href="http://contractvm.github.io/media/cvm-decentr.png"><img alt="http://contractvm.github.io/media/cvm-decentr.png" class="align-center" src="http://contractvm.github.io/media/cvm-decentr.png" style="width: 200px;" /></a>
+<div class="section" id="dapp-messages-and-blockchain">
+<h2>Dapp messages and blockchain<a class="headerlink" href="#dapp-messages-and-blockchain" title="Permalink to this headline">¶</a></h2>
+<p>Dapp interactions (called messages) are stored using a data structure that combines a
+blockchain with a distributed hash table; message data are saved inside the DHT, exploiting
+the blockchain only for cryptographic proof. Contractvm can use any of the existing blockchains
+that follow the bitcoin-core protocol (bitcoin, litecoin, dogecoin and more than 500 other).</p>
+<a class="reference internal image-reference" href="http://contractvm.github.io/media/cvm-data-model.png"><img alt="http://contractvm.github.io/media/cvm-data-model.png" class="align-center" src="http://contractvm.github.io/media/cvm-data-model.png" style="width: 500px;" /></a>
+<p>The blockchain protocol is implemented inside the contractvmd daemon through the bitpeer.py library,
+so it doesn&#8217;t require an external blockchain daemon. In addition, the contractvmd daemon saves locally
+only block headers and transactions that contains a contractvm message, mitigating the blockchain
+storage footprint.</p>
+</div>
+<div class="section" id="client-side-consensus">
+<h2>Client-side consensus<a class="headerlink" href="#client-side-consensus" title="Permalink to this headline">¶</a></h2>
+<p>Correctness of computations is guaranteed by a client-side consensus mechanism: when a
+client queries a dapp, the query is replicated and sent to a set of distinct nodes in a
+trasparent manner; the actual result is obtained by taking the majority of the received
+answers. Moreover, this design choice gives to nodes the ability to choose which dapps handle,
+providing a true separation between decentralized applications.</p>
+<a class="reference internal image-reference" href="http://contractvm.github.io/media/cvm-consensus.png"><img alt="http://contractvm.github.io/media/cvm-consensus.png" class="align-center" src="http://contractvm.github.io/media/cvm-consensus.png" style="width: 350px;" /></a>
 </div>
 </div>
 
